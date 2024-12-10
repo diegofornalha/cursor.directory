@@ -3,35 +3,31 @@ import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
 import { Metadata } from 'next';
 
-interface PageParams {
-  slug: string;
-}
+// Tipos do Next.js para páginas dinâmicas
+type PageProps = {
+  params: { slug: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
 
-export async function generateMetadata({
-  params,
-}: {
-  params: PageParams;
-}): Promise<Metadata> {
+export async function generateMetadata(
+  { params }: PageProps
+): Promise<Metadata> {
   const rule = await getRuleBySlug(params.slug);
-
+  
   return {
     title: rule ? `${rule.title} rule by ${rule.author?.name}` : 'Rule not found',
     description: rule?.content,
   };
 }
 
-export async function generateStaticParams(): Promise<PageParams[]> {
+export async function generateStaticParams() {
   return rules.map((rule) => ({
     slug: rule.slug,
   }));
 }
 
-interface PageProps {
-  params: PageParams;
-}
-
-export default async function Page(props: PageProps) {
-  const rule = await getRuleBySlug(props.params.slug);
+export default async function Page({ params }: PageProps) {
+  const rule = await getRuleBySlug(params.slug);
 
   if (!rule) {
     return <div>Rule not found</div>;
