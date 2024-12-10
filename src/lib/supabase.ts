@@ -19,7 +19,7 @@ export async function incrementWhatsappClicks(slug: string) {
 
 export async function getPopularItems(limit = 10) {
   const { data } = await supabase
-    .from('click_counts')
+    .from('rule_counts')
     .select('slug, click_content, click_url, click_whatsapp')
     .order('click_content', { ascending: false })
     .order('click_url', { ascending: false })
