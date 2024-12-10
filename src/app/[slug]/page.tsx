@@ -1,17 +1,16 @@
 import { Menu } from "@/components/menu";
 import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
+import { Metadata } from 'next';
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-  searchParams?: { [key: string]: string | string[] | undefined };
+// Atualize a interface para usar os tipos corretos do Next.js
+type Props = {
+  params: { slug: string }
+  searchParams: { [key: string]: string | string[] | undefined }
 }
 
-export async function generateMetadata({ params }: PageProps) {
-  const slug = params.slug;
-  const rule = await getRuleBySlug(slug);
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const rule = await getRuleBySlug(params.slug);
 
   return {
     title: rule ? `${rule.title} rule by ${rule.author?.name}` : 'Rule not found',
@@ -24,9 +23,8 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: PageProps) {
-  const slug = params.slug;
-  const rule = await getRuleBySlug(slug);
+export default async function Page({ params }: Props) {
+  const rule = await getRuleBySlug(params.slug);
 
   if (!rule) {
     return <div>Rule not found</div>;
