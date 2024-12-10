@@ -3,16 +3,13 @@ import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
 import { Metadata } from 'next';
 
-// Tipos do Next.js para páginas dinâmicas
-type PageProps = {
-  params: { slug: string };
-  searchParams: { [key: string]: string | string[] | undefined };
-};
+// Definindo os tipos corretos para o Next.js 14
+type Props = {
+  params: { slug: string }
+}
 
-export async function generateMetadata(
-  { params }: PageProps
-): Promise<Metadata> {
-  const rule = await getRuleBySlug(params.slug);
+export async function generateMetadata(props: Props): Promise<Metadata> {
+  const rule = await getRuleBySlug(props.params.slug);
   
   return {
     title: rule ? `${rule.title} rule by ${rule.author?.name}` : 'Rule not found',
@@ -26,7 +23,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: PageProps) {
+// Página principal
+export default async function Page(props: Props) {
+  const { params } = props;
   const rule = await getRuleBySlug(params.slug);
 
   if (!rule) {
@@ -46,4 +45,5 @@ export default async function Page({ params }: PageProps) {
   );
 }
 
+// Revalidação a cada 24 horas
 export const revalidate = 86400;
