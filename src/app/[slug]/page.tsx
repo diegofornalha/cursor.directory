@@ -3,32 +3,35 @@ import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
 import { Metadata } from 'next';
 
-// Usar os tipos corretos do Next.js
+interface PageParams {
+  slug: string;
+}
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: PageParams;
 }): Promise<Metadata> {
   const rule = await getRuleBySlug(params.slug);
 
   return {
     title: rule ? `${rule.title} rule by ${rule.author?.name}` : 'Rule not found',
+    description: rule?.content,
   };
 }
 
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<PageParams[]> {
   return rules.map((rule) => ({
     slug: rule.slug,
   }));
 }
 
-// Usar a tipagem inline para o componente da página
-export default async function Page({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const rule = await getRuleBySlug(params.slug);
+interface PageProps {
+  params: PageParams;
+}
+
+export default async function Page(props: PageProps) {
+  const rule = await getRuleBySlug(props.params.slug);
 
   if (!rule) {
     return <div>Rule not found</div>;
@@ -47,4 +50,4 @@ export default async function Page({
   );
 }
 
-export const revalidate = 86400; // Revalidate every 24 hours
+export const revalidate = 86400;
