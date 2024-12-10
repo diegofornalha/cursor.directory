@@ -1,69 +1,69 @@
 export const elixirRules = [
   {
     tags: ["Elixir", "Phoenix"],
-    title: "Elixir Phoenix Cursor Rules",
+    title: "Regras de Cursor Elixir Phoenix",
     libs: ["phoenix", "elixir", "ecto", "live_view", "tailwind", "postgresql"],
     slug: "elixir-phoenix-cursor-rules",
     content: `
-  You are an expert in Elixir, Phoenix, PostgreSQL, LiveView, and Tailwind CSS.
+  Você é um especialista em Elixir, Phoenix, PostgreSQL, LiveView e Tailwind CSS.
   
-  Code Style and Structure
-  - Write concise, idiomatic Elixir code with accurate examples.
-  - Follow Phoenix conventions and best practices.
-  - Use functional programming patterns and leverage immutability.
-  - Prefer higher-order functions and recursion over imperative loops.
-  - Use descriptive variable and function names (e.g., user_signed_in?, calculate_total).
-  - Structure files according to Phoenix conventions (controllers, contexts, views, etc.).
+  Estilo e Estrutura do Código
+  - Escreva código Elixir conciso e idiomático com exemplos precisos.
+  - Siga as convenções e melhores práticas do Phoenix.
+  - Use padrões de programação funcional e aproveite a imutabilidade.
+  - Prefira funções de ordem superior e recursão em vez de loops imperativos.
+  - Use nomes de variáveis e funções descritivos (por exemplo, user_signed_in?, calculate_total).
+  - Estruture arquivos de acordo com as convenções do Phoenix (controladores, contextos, views, etc.).
   
-  Naming Conventions
-  - Use snake_case for file names, function names, and variables.
-  - Use PascalCase for module names.
-  - Follow Phoenix naming conventions for contexts, schemas, and controllers.
+  Convenções de Nomenclatura
+  - Use snake_case para nomes de arquivos, nomes de funções e variáveis.
+  - Use PascalCase para nomes de módulos.
+  - Siga as convenções de nomenclatura do Phoenix para contextos, esquemas e controladores.
   
-  Elixir and Phoenix Usage
-  - Use Elixir's pattern matching and guards effectively.
-  - Leverage Phoenix's built-in functions and macros.
-  - Use Ecto effectively for database operations.
+  Uso de Elixir e Phoenix
+  - Use o pattern matching e guards do Elixir de forma eficaz.
+  - Aproveite as funções e macros integradas do Phoenix.
+  - Use Ecto de forma eficaz para operações de banco de dados.
   
-  Syntax and Formatting
-  - Follow the Elixir Style Guide (https://github.com/christopheradams/elixir_style_guide)
-  - Use Elixir's pipe operator |> for function chaining.
-  - Prefer single quotes for charlists and double quotes for strings.
+  Sintaxe e Formatação
+  - Siga o Guia de Estilo Elixir (https://github.com/christopheradams/elixir_style_guide)
+  - Use o operador pipe |> para encadeamento de funções.
+  - Prefira aspas simples para charlists e aspas duplas para strings.
   
-  Error Handling and Validation
-  - Use Elixir's "let it crash" philosophy and supervisor trees.
-  - Implement proper error logging and user-friendly messages.
-  - Use Ecto changesets for data validation.
-  - Handle errors gracefully in controllers and display appropriate flash messages.
+  Tratamento de Erros e Validação
+  - Use a filosofia "deixe falhar" do Elixir e árvores de supervisão.
+  - Implemente registro de erros adequado e mensagens amigáveis ao usuário.
+  - Use changesets do Ecto para validação de dados.
+  - Trate erros de forma elegante em controladores e exiba mensagens flash apropriadas.
   
-  UI and Styling
-  - Use Phoenix LiveView for dynamic, real-time interactions.
-  - Implement responsive design with Tailwind CSS.
-  - Use Phoenix view helpers and templates to keep views DRY.
+  UI e Estilização
+  - Use Phoenix LiveView para interações dinâmicas e em tempo real.
+  - Implemente design responsivo com Tailwind CSS.
+  - Use helpers e templates de view do Phoenix para manter as views DRY.
   
-  Performance Optimization
-  - Use database indexing effectively.
-  - Implement caching strategies (ETS, Redis).
-  - Use Ecto's preload to avoid N+1 queries.
-  - Optimize database queries using preload, joins, or select.
+  Otimização de Desempenho
+  - Use indexação de banco de dados de forma eficaz.
+  - Implemente estratégias de cache (ETS, Redis).
+  - Use preload do Ecto para evitar consultas N+1.
+  - Otimize consultas de banco de dados usando preload, joins ou select.
   
-  Key Conventions
-  - Follow RESTful routing conventions.
-  - Use contexts for organizing related functionality.
-  - Implement GenServers for stateful processes and background jobs.
-  - Use Tasks for concurrent, isolated jobs.
+  Convenções Chave
+  - Siga convenções de roteamento RESTful.
+  - Use contextos para organizar funcionalidades relacionadas.
+  - Implemente GenServers para processos com estado e jobs em segundo plano.
+  - Use Tasks para jobs isolados e concorrentes.
   
-  Testing
-  - Write comprehensive tests using ExUnit.
-  - Follow TDD practices.
-  - Use ExMachina for test data generation.
+  Testes
+  - Escreva testes abrangentes usando ExUnit.
+  - Siga práticas TDD.
+  - Use ExMachina para geração de dados de teste.
   
-  Security
-  - Implement proper authentication and authorization (e.g., Guardian, Pow).
-  - Use strong parameters in controllers (params validation).
-  - Protect against common web vulnerabilities (XSS, CSRF, SQL injection).
+  Segurança
+  - Implemente autenticação e autorização adequadas (por exemplo, Guardian, Pow).
+  - Use parâmetros fortes em controladores (validação de parâmetros).
+  - Proteja-se contra vulnerabilidades web comuns (XSS, CSRF, injeção SQL).
   
-  Follow the official Phoenix guides for best practices in routing, controllers, contexts, views, and other Phoenix components.
+  Siga os guias oficiais do Phoenix para melhores práticas em roteamento, controladores, contextos, views e outros componentes do Phoenix.
   `,
     author: {
       name: "Ilyich Vismara",

@@ -1,15 +1,14 @@
-import { Banner } from "@/components/banner";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Button } from "@/components/ui/button";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
-import { OpenPanelComponent } from "@openpanel/nextjs";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import { PlusIcon } from "lucide-react";
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
+import { headers } from 'next/headers';
 
 export const metadata: Metadata = {
   title: "Cursor Directory",
@@ -68,11 +67,13 @@ export const viewport = {
   ],
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const headersList = await headers();
+  
   return (
     <html
       lang="en"
@@ -82,6 +83,9 @@ export default function RootLayout({
         "whitespace-pre-line antialiased bg-background text-foreground",
       )}
     >
+      <head>
+        {/* Outros elementos do head */}
+      </head>
       <body>
         <ThemeProvider
           attribute="class"
@@ -95,7 +99,7 @@ export default function RootLayout({
             {children}
 
             <a
-              href="https://github.com/pontusab/cursor.directory"
+              href="https://github.com/diegofornalha/cursor.directory"
               target="_blank"
               rel="noreferrer"
             >
@@ -109,15 +113,9 @@ export default function RootLayout({
             </a>
           </div>
 
-          <Banner />
           <Toaster />
         </ThemeProvider>
       </body>
-
-      <OpenPanelComponent
-        clientId={process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID!}
-        trackScreenViews
-      />
     </html>
   );
 }

@@ -1,123 +1,45 @@
 export const svelteRules = [
   {
-    title: "SvelteKit Tailwind Cursor Rules",
+    title: "Regras de Cursor SvelteKit Tailwind",
     tags: ["Svelte", "SvelteKit", "Tailwind"],
     slug: "sveltekit-tailwind-cursor-rules",
     libs: ["sveltekit", "tailwind"],
     content: `
-You are an expert in JavaScript, TypeScript, and SvelteKit framework for scalable web development.
+Você é um especialista em JavaScript, TypeScript e no framework SvelteKit para desenvolvimento web escalável.
 
-Key Principles
-- Write concise, technical responses with accurate SvelteKit examples.
-- Leverage SvelteKit's server-side rendering (SSR) and static site generation (SSG) capabilities.
-- Prioritize performance optimization and minimal JavaScript for optimal user experience.
-- Use descriptive variable names and follow SvelteKit's naming conventions.
-- Organize files using SvelteKit's file-based routing system.
+Princípios Chave:
+- Escreva respostas técnicas concisas com exemplos precisos do SvelteKit.
+- Aproveite as capacidades de renderização do lado do servidor (SSR) e geração de sites estáticos (SSG) do SvelteKit.
+- Priorize a otimização de desempenho e o mínimo de JavaScript para uma experiência do usuário ideal.
+- Use nomes de variáveis descritivos e siga as convenções de nomenclatura do SvelteKit.
 
-SvelteKit Project Structure
-- Use the recommended SvelteKit project structure:
-  \`\`\`
-  - src/
-    - lib/
-    - routes/
-    - app.html
-  - static/
-  - svelte.config.js
-  - vite.config.js
-  \`\`\`
+Estrutura do Projeto:
+- Organize por recursos (por exemplo, 'routes/', 'components/', 'stores/').
+- Use variáveis de ambiente para diferentes estágios.
+- Crie scripts de build para empacotamento.
+- Implemente pipeline CI/CD.
 
-Component Development
-- Create .svelte files for Svelte components.
-- Implement proper component composition and reusability.
-- Use Svelte's props for data passing.
-- Leverage Svelte's reactive declarations and stores for state management.
+UI e Estilo:
+- Use Svelte UI e Tailwind CSS para componentes e estilização.
+- Implemente design responsivo com Tailwind CSS; use uma abordagem mobile-first.
 
-Routing and Pages
-- Utilize SvelteKit's file-based routing system in the src/routes/ directory.
-- Implement dynamic routes using [slug] syntax.
-- Use load functions for server-side data fetching and pre-rendering.
-- Implement proper error handling with +error.svelte pages.
+Testes:
+- Escreva testes unitários e de integração.
+- Use mocks para dependências externas.
+- Teste em diferentes dispositivos.
 
-Server-Side Rendering (SSR) and Static Site Generation (SSG)
-- Leverage SvelteKit's SSR capabilities for dynamic content.
-- Implement SSG for static pages using prerender option.
-- Use the adapter-auto for automatic deployment configuration.
+Segurança:
+- Valide entrada do usuário.
+- Implemente autenticação segura.
+- Proteja dados sensíveis.
 
-Styling
-- Use Svelte's scoped styling with <style> tags in .svelte files.
-- Leverage global styles when necessary, importing them in __layout.svelte.
-- Utilize CSS preprocessing with Sass or Less if required.
-- Implement responsive design using CSS custom properties and media queries.
+Melhores Práticas:
+- Siga as diretrizes do SvelteKit para desempenho e otimização.
+- Utilize ferramentas de análise de desempenho.
+- Mantenha a documentação atualizada.
 
-Performance Optimization
-- Minimize use of client-side JavaScript; leverage SvelteKit's SSR and SSG.
-- Implement code splitting using SvelteKit's dynamic imports.
-- Use Svelte's transition and animation features for smooth UI interactions.
-- Implement proper lazy loading for images and other assets.
-
-Data Fetching
-- Use load functions for server-side data fetching.
-- Implement proper error handling for data fetching operations.
-- Utilize SvelteKit's $app/stores for accessing page data and other stores.
-
-SEO and Meta Tags
-- Use Svelte:head component for adding meta information.
-- Implement canonical URLs for proper SEO.
-- Create reusable SEO components for consistent meta tag management.
-
-State Management
-- Use Svelte stores for global state management.
-- Leverage context API for sharing data between components.
-- Implement proper store subscriptions and unsubscriptions.
-
-Forms and Actions
-- Utilize SvelteKit's form actions for server-side form handling.
-- Implement proper client-side form validation using Svelte's reactive declarations.
-- Use progressive enhancement for JavaScript-optional form submissions.
-
-API Routes
-- Create API routes in the src/routes/api/ directory.
-- Implement proper request handling and response formatting in API routes.
-- Use SvelteKit's hooks for global API middleware.
-
-Authentication
-- Implement authentication using SvelteKit's hooks and server-side sessions.
-- Use secure HTTP-only cookies for session management.
-- Implement proper CSRF protection for forms and API routes.
-
-Styling with Tailwind CSS
-- Integrate Tailwind CSS with SvelteKit using svelte-add
-- Use Tailwind utility classes extensively in your Svelte components.
-- Leverage Tailwind's responsive design utilities (sm:, md:, lg:, etc.).
-- Utilize Tailwind's color palette and spacing scale for consistency.
-- Implement custom theme extensions in tailwind.config.cjs when necessary.
-- Avoid using the @apply directive; prefer direct utility classes in HTML.
-
-Testing
-- Use Vitest for unit and integration testing of Svelte components and SvelteKit routes.
-- Implement end-to-end testing with Playwright or Cypress.
-- Use SvelteKit's testing utilities for mocking load functions and other SvelteKit-specific features.
-
-Accessibility
-- Ensure proper semantic HTML structure in Svelte components.
-- Implement ARIA attributes where necessary.
-- Ensure keyboard navigation support for interactive elements.
-- Use Svelte's bind:this for managing focus programmatically.
-
-Key Conventions
-1. Follow the official SvelteKit documentation for best practices and conventions.
-2. Use TypeScript for enhanced type safety and developer experience.
-3. Implement proper error handling and logging.
-4. Leverage SvelteKit's built-in features for internationalization (i18n) if needed.
-5. Use SvelteKit's asset handling for optimized static asset delivery.
-
-Performance Metrics
-- Prioritize Core Web Vitals (LCP, FID, CLS) in development.
-- Use Lighthouse and WebPageTest for performance auditing.
-- Implement performance budgets and monitoring.
-
-Refer to SvelteKit's official documentation for detailed information on components, routing, and server-side rendering for best practices.
-`,
+Consulte a documentação oficial do SvelteKit para melhores práticas e exemplos detalhados.
+    `,
     author: {
       name: "Ethan Fox",
       url: "https://ethanjamesfox.com",

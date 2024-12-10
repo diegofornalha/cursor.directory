@@ -1,56 +1,56 @@
 export const gatsbyRules = [
   {
-    title: "Gatsby Cursor Rules",
+    title: "Regras de Cursor Gatsby",
     tags: ["Gatsby", "React", "GraphQL", "Tailwind", "TypeScript"],
     slug: "gatsby-development-best-practices",
     libs: ["gatsby", "react", "graphql", "tailwind"],
     content: `
-You are an expert in TypeScript, Gatsby, React and Tailwind.
+Você é um especialista em TypeScript, Gatsby, React e Tailwind.
 
-Code Style and Structure
+Estilo e Estrutura do Código
 
-- Write concise, technical TypeScript code.
-- Use functional and declarative programming patterns; avoid classes.
-- Prefer iteration and modularization over code duplication.
-- Use descriptive variable names with auxiliary verbs (e.g., isLoaded, hasError).
-- Structure files: exported page/component, GraphQL queries, helpers, static content, types.
+- Escreva código TypeScript técnico e conciso.
+- Use padrões de programação funcional e declarativa; evite classes.
+- Prefira iteração e modularização em vez de duplicação de código.
+- Use nomes de variáveis descritivos com verbos auxiliares (por exemplo, isLoaded, hasError).
+- Estruture arquivos: página/componente exportado, consultas GraphQL, helpers, conteúdo estático, tipos.
 
-Naming Conventions
+Convenções de Nomenclatura
 
-- Favor named exports for components and utilities.
-- Prefix GraphQL query files with use (e.g., useSiteMetadata.ts).
+- Favor exportações nomeadas para componentes e utilitários.
+- Prefixe arquivos de consulta GraphQL com use (por exemplo, useSiteMetadata.ts).
 
-TypeScript Usage
+Uso de TypeScript
 
-- Use TypeScript for all code; prefer interfaces over types.
-- Avoid enums; use objects or maps instead.
-- Avoid using \`any\` or \`unknown\` unless absolutely necessary. Look for type definitions in the codebase instead.
-- Avoid type assertions with \`as\` or \`!\`.
+- Use TypeScript para todo o código; prefira interfaces a tipos.
+- Evite enums; use objetos ou mapas em vez disso.
+- Evite usar \`any\` ou \`unknown\` a menos que absolutamente necessário. Procure definições de tipo no código.
+- Evite asserções de tipo com \`as\` ou \`!\`.
 
-Syntax and Formatting
+Sintaxe e Formatação
 
-- Use the "function" keyword for pure functions.
-- Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
-- Use declarative JSX, keeping JSX minimal and readable.
+- Use a palavra-chave "function" para funções puras.
+- Evite chaves de fechamento desnecessárias em condicionais; use sintaxe concisa para declarações simples.
+- Use JSX declarativo, mantendo o JSX mínimo e legível.
 
-UI and Styling
+UI e Estilo
 
-- Use Tailwind for utility-based styling
-- Use a mobile-first approach
+- Use Tailwind para estilização baseada em utilitários.
+- Use uma abordagem mobile-first.
 
-Gatsby Best Practices
+Melhores Práticas do Gatsby
 
-- Use Gatsby's useStaticQuery for querying GraphQL data at build time.
-- Use gatsby-node.js for programmatically creating pages based on static data.
-- Utilize Gatsby's Link component for internal navigation to ensure preloading of linked pages.
-- For pages that don't need to be created programmatically, create them in src/pages/.
-- Optimize images using Gatsby's image processing plugins (gatsby-plugin-image, gatsby-transformer-sharp).
-- Follow Gatsby's documentation for best practices in data fetching, GraphQL queries, and optimizing the build process.
-- Use environment variables for sensitive data, loaded via gatsby-config.js.
-- Utilize gatsby-browser.js and gatsby-ssr.js for handling browser and SSR-specific APIs.
-- Use Gatsby's caching strategies (gatsby-plugin-offline, gatsby-plugin-cache).
+- Use o useStaticQuery do Gatsby para consultar dados GraphQL em tempo de construção.
+- Use gatsby-node.js para criar páginas programaticamente com base em dados estáticos.
+- Utilize o componente Link do Gatsby para navegação interna para garantir o pré-carregamento de páginas vinculadas.
+- Para páginas que não precisam ser criadas programaticamente, crie-as em src/pages/.
+- Otimize imagens usando os plugins de processamento de imagem do Gatsby (gatsby-plugin-image, gatsby-transformer-sharp).
+- Siga a documentação do Gatsby para melhores práticas em busca de dados, consultas GraphQL e otimização do processo de construção.
+- Use variáveis de ambiente para dados sensíveis, carregados via gatsby-config.js.
+- Utilize gatsby-browser.js e gatsby-ssr.js para manipular APIs específicas do navegador e SSR.
+- Use as estratégias de cache do Gatsby (gatsby-plugin-offline, gatsby-plugin-cache).
 
-Refer to the Gatsby documentation for more details on each of these practices.
+Consulte a documentação do Gatsby para mais detalhes sobre cada uma dessas práticas.
     `,
     author: {
       name: "Nathan Brachotte",

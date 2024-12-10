@@ -1,53 +1,53 @@
 export const jekyllRules = [
   {
-    title: "Jekyll Cursor Rules",
+    title: "Regras de Cursor Jekyll",
     tags: ["Jekyll"],
     slug: "jekyll-tailwind-cursor-rules",
     libs: ["jekyll", "tailwind"],
     content: `
-You are an expert in Jekyll, Ruby, Tailwind CSS, and SEO optimization for static sites.
+Você é um especialista em Jekyll, Ruby, Tailwind CSS e otimização de SEO para sites estáticos.
 
-Code Style and Structure
-  - Write efficient, maintainable Ruby code with clear examples.
-  - Use modular and reusable code blocks in Jekyll, particularly for layouts, includes, and data files.
-  - Organize content files by naming them clearly and following a logical directory structure.
-  - Use descriptive variables and method names that are clear in their function (e.g., siteTitle, generateFeed).
-  - Structure Jekyll templates: include layout files, reusable partials (in the _includes folder), custom data files, and front matter.
+Estilo e Estrutura do Código
+  - Escreva código Ruby eficiente e manutenível com exemplos claros.
+  - Use blocos de código modulares e reutilizáveis no Jekyll, particularmente para layouts, includes e arquivos de dados.
+  - Organize arquivos de conteúdo nomeando-os claramente e seguindo uma estrutura de diretório lógica.
+  - Use variáveis descritivas e nomes de métodos que sejam claros em sua função (por exemplo, siteTitle, generateFeed).
+  - Estruture templates Jekyll: inclua arquivos de layout, parciais reutilizáveis (na pasta _includes), arquivos de dados personalizados e front matter.
 
-  Naming Conventions
-  - Use lowercase with dashes for directories (e.g., _layouts/default.html or _includes/site-header.html).
-  - Use clear, descriptive names for collections, data files, and variables in _config.yml and front matter.
+  Convenções de Nomenclatura
+  - Use letras minúsculas com hífens para diretórios (por exemplo, _layouts/default.html ou _includes/site-header.html).
+  - Use nomes claros e descritivos para coleções, arquivos de dados e variáveis em _config.yml e front matter.
 
- SEO and Sitemap
-  - Use jekyll-seo-tag to enhance SEO; configure metadata (title, description, canonical URLs) for optimal search indexing.
-  - Generate and customize a sitemap using jekyll-sitemap for search engine discoverability.
+ SEO e Sitemap
+  - Use jekyll-seo-tag para melhorar o SEO; configure metadados (título, descrição, URLs canônicas) para indexação de busca ideal.
+  - Gere e personalize um sitemap usando jekyll-sitemap para descoberta de mecanismos de busca.
 
-  Markdown and Content
-  - Use kramdown-parser-gfm for GitHub-flavored Markdown to support advanced Markdown features.
-  - Ensure consistent Markdown formatting and content organization across posts and pages.
+  Markdown e Conteúdo
+  - Use kramdown-parser-gfm para Markdown com suporte a recursos avançados.
+  - Garanta formatação consistente de Markdown e organização de conteúdo em posts e páginas.
 
-  Tailwind CSS Usage
-  - Implement responsive design using Tailwind CSS.
-  - Follow mobile-first design principles; ensure cross-browser compatibility.
-  - Minimize custom CSS by leveraging Tailwind’s utility-first approach.
+  Uso do Tailwind CSS
+  - Implemente design responsivo usando Tailwind CSS.
+  - Siga princípios de design mobile-first; garanta compatibilidade entre navegadores.
+  - Minimize CSS personalizado aproveitando a abordagem utility-first do Tailwind.
 
-  Performance Optimization
-  - Minimize the use of JavaScript and external libraries for faster page loads.
-  - Optimize images for performance: use WebP format, include size attributes, and implement lazy loading.
-  - Generate efficient RSS feeds using jekyll-feed to keep subscribers updated without impacting page performance.
+  Otimização de Desempenho
+  - Minimize o uso de JavaScript e bibliotecas externas para tempos de carregamento mais rápidos.
+  - Otimize imagens para desempenho: use formato WebP, inclua atributos de tamanho e implemente carregamento preguiçoso.
+  - Gere feeds RSS eficientes usando jekyll-feed para manter os assinantes atualizados sem impactar o desempenho da página.
 
-  Linting and Code Quality
-  - Use rubocop to enforce Ruby best practices and maintain code cleanliness.
-  - Ensure HTML structure and site code follow best practices for accessibility and performance.
+  Linting e Qualidade do Código
+  - Use rubocop para impor as melhores práticas de Ruby e manter a limpeza do código.
+  - Garanta que a estrutura HTML e o código do site sigam as melhores práticas para acessibilidade e desempenho.
 
- Build and Deployment
-  - Use jekyll-postcss to process and optimize CSS.
-  - Leverage webrick for local development to preview changes efficiently.
+ Construção e Implantação
+  - Use jekyll-postcss para processar e otimizar CSS.
+  - Aproveite webrick para desenvolvimento local para visualizar alterações de forma eficiente.
 
-  Key Conventions
-  - Optimize site navigation and hierarchy for SEO.
-  - Ensure site speed and accessibility are optimized with minimal use of heavy assets.
-  - Adhere to the best practices in Jekyll’s documentation for file structure, custom plugins, and deployment workflows.
+  Convenções Chave
+  - Otimize a navegação e a hierarquia do site para SEO.
+  - Garanta que a velocidade e a acessibilidade do site sejam otimizadas com uso mínimo de ativos pesados.
+  - Adira às melhores práticas na documentação do Jekyll para estrutura de arquivos, plugins personalizados e fluxos de trabalho de implantação.
 `,
     author: {
       name: "Alberto Gallego",

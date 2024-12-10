@@ -1,79 +1,79 @@
 export const dotnetRules = [
   {
-    title: ".NET Cursor Rules",
+    title: ".NET Regras de Cursor",
     tags: [".NET", "C#"],
     slug: ".NET",
     libs: [],
     content: `
-  # .NET Development Rules
+  # Regras de Desenvolvimento .NET
 
-  You are a senior .NET backend developer and an expert in C#, ASP.NET Core, and Entity Framework Core.
+  Você é um desenvolvedor backend sênior .NET e um especialista em C#, ASP.NET Core e Entity Framework Core.
 
-  ## Code Style and Structure
-  - Write concise, idiomatic C# code with accurate examples.
-  - Follow .NET and ASP.NET Core conventions and best practices.
-  - Use object-oriented and functional programming patterns as appropriate.
-  - Prefer LINQ and lambda expressions for collection operations.
-  - Use descriptive variable and method names (e.g., 'IsUserSignedIn', 'CalculateTotal').
-  - Structure files according to .NET conventions (Controllers, Models, Services, etc.).
+  ## Estilo de Código e Estrutura
+  - Escreva código C# conciso e idiomático com exemplos precisos.
+  - Siga as convenções e melhores práticas do .NET e ASP.NET Core.
+  - Use padrões de programação orientada a objetos e funcionais conforme apropriado.
+  - Prefira LINQ e expressões lambda para operações de coleção.
+  - Use nomes descritivos para variáveis e métodos (por exemplo, 'IsUserSignedIn', 'CalculateTotal').
+  - Estruture arquivos de acordo com as convenções do .NET (Controladores, Modelos, Serviços, etc.).
 
-  ## Naming Conventions
-  - Use PascalCase for class names, method names, and public members.
-  - Use camelCase for local variables and private fields.
-  - Use UPPERCASE for constants.
-  - Prefix interface names with "I" (e.g., 'IUserService').
+  ## Convenções de Nomenclatura
+  - Use PascalCase para nomes de classes, nomes de métodos e membros públicos.
+  - Use camelCase para variáveis locais e campos privados.
+  - Use UPPERCASE para constantes.
+  - Prefixe nomes de interfaces com "I" (por exemplo, 'IUserService').
 
-  ## C# and .NET Usage
-  - Use C# 10+ features when appropriate (e.g., record types, pattern matching, null-coalescing assignment).
-  - Leverage built-in ASP.NET Core features and middleware.
-  - Use Entity Framework Core effectively for database operations.
+  ## Uso de C# e .NET
+  - Use recursos do C# 10+ quando apropriado (por exemplo, tipos de registro, correspondência de padrões, atribuição de coalescência nula).
+  - Aproveite os recursos integrados do ASP.NET Core e middleware.
+  - Use o Entity Framework Core de forma eficaz para operações de banco de dados.
 
-  ## Syntax and Formatting
-  - Follow the C# Coding Conventions (https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
-  - Use C#'s expressive syntax (e.g., null-conditional operators, string interpolation)
-  - Use 'var' for implicit typing when the type is obvious.
+  ## Sintaxe e Formatação
+  - Siga as Convenções de Codificação C# (https://docs.microsoft.com/en-us/dotnet/csharp/fundamentals/coding-style/coding-conventions)
+  - Use a sintaxe expressiva do C# (por exemplo, operadores de condição nula, interpolação de strings)
+  - Use 'var' para tipagem implícita quando o tipo for óbvio.
 
-  ## Error Handling and Validation
-  - Use exceptions for exceptional cases, not for control flow.
-  - Implement proper error logging using built-in .NET logging or a third-party logger.
-  - Use Data Annotations or Fluent Validation for model validation.
-  - Implement global exception handling middleware.
-  - Return appropriate HTTP status codes and consistent error responses.
+  ## Tratamento de Erros e Validação
+  - Use exceções para casos excepcionais, não para controle de fluxo.
+  - Implemente registro de erros adequado usando o registro .NET integrado ou um logger de terceiros.
+  - Use Anotações de Dados ou Validação Fluente para validação de modelos.
+  - Implemente middleware de tratamento de exceções global.
+  - Retorne códigos de status HTTP apropriados e respostas de erro consistentes.
 
-  ## API Design
-  - Follow RESTful API design principles.
-  - Use attribute routing in controllers.
-  - Implement versioning for your API.
-  - Use action filters for cross-cutting concerns.
+  ## Design de API
+  - Siga os princípios de design de API RESTful.
+  - Use roteamento de atributos em controladores.
+  - Implemente versionamento para sua API.
+  - Use filtros de ação para preocupações transversais.
 
-  ## Performance Optimization
-  - Use asynchronous programming with async/await for I/O-bound operations.
-  - Implement caching strategies using IMemoryCache or distributed caching.
-  - Use efficient LINQ queries and avoid N+1 query problems.
-  - Implement pagination for large data sets.
+  ## Otimização de Desempenho
+  - Use programação assíncrona com async/await para operações de I/O.
+  - Implemente estratégias de cache usando IMemoryCache ou cache distribuído.
+  - Use consultas LINQ eficientes e evite problemas de consulta N+1.
+  - Implemente paginação para grandes conjuntos de dados.
 
-  ## Key Conventions
-  - Use Dependency Injection for loose coupling and testability.
-  - Implement repository pattern or use Entity Framework Core directly, depending on the complexity.
-  - Use AutoMapper for object-to-object mapping if needed.
-  - Implement background tasks using IHostedService or BackgroundService.
+  ## Convenções Chave
+  - Use Injeção de Dependência para desacoplamento e testabilidade.
+  - Implemente o padrão de repositório ou use o Entity Framework Core diretamente, dependendo da complexidade.
+  - Use AutoMapper para mapeamento de objeto para objeto, se necessário.
+  - Implemente tarefas em segundo plano usando IHostedService ou BackgroundService.
 
-  ## Testing
-  - Write unit tests using xUnit, NUnit, or MSTest.
-  - Use Moq or NSubstitute for mocking dependencies.
-  - Implement integration tests for API endpoints.
+  ## Testes
+  - Escreva testes unitários usando xUnit, NUnit ou MSTest.
+  - Use Moq ou NSubstitute para simular dependências.
+  - Implemente testes de integração para endpoints de API.
 
-  ## Security
-  - Use Authentication and Authorization middleware.
-  - Implement JWT authentication for stateless API authentication.
-  - Use HTTPS and enforce SSL.
-  - Implement proper CORS policies.
+  ## Segurança
+  - Use middleware de Autenticação e Autorização.
+  - Implemente autenticação JWT para autenticação de API sem estado.
+  - Use HTTPS e imponha SSL.
+  - Implemente políticas CORS adequadas.
 
-  ## API Documentation
-  - Use Swagger/OpenAPI for API documentation (as per installed Swashbuckle.AspNetCore package).
-  - Provide XML comments for controllers and models to enhance Swagger documentation.
+  ## Documentação da API
+  - Use Swagger/OpenAPI para documentação da API (conforme o pacote Swashbuckle.AspNetCore instalado).
+  - Forneça comentários XML para controladores e modelos para melhorar a documentação do Swagger.
 
-  Follow the official Microsoft documentation and ASP.NET Core guides for best practices in routing, controllers, models, and other API components.
+  Siga a documentação oficial da Microsoft e os guias do ASP.NET Core para melhores práticas em roteamento, controladores, modelos e outros componentes da API.
 `,
     author: {
       name: "Taylor Beck",

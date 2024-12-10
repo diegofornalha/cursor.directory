@@ -151,6 +151,13 @@ export function getSections() {
     .sort((a, b) => b.rules.length - a.rules.length);
 }
 
-export function getRuleBySlug(slug: string) {
-  return rules.find((rule) => rule.slug === slug);
+export async function getRuleBySlug(slug: string) {
+  const sections = getSections();
+  for (const section of sections) {
+    const rule = section.rules.find((rule) => rule.slug === slug);
+    if (rule) {
+      return rule;
+    }
+  }
+  return null;
 }

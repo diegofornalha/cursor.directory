@@ -1,15 +1,20 @@
 import { Menu } from "@/components/menu";
 import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
+import { incrementClicks } from '@/lib/supabase';
 
-export async function generateMetadata({
-  params,
-}: { params: { slug: string } }) {
-  const rule = getRuleBySlug(params.slug);
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const slug = await Promise.resolve(params.slug);
+  const rule = await getRuleBySlug(slug);
 
   return {
-    title: `${rule?.title} rule by ${rule?.author?.name}`,
-    description: rule?.content,
+    title: rule ? `${rule.title} rule by ${rule.author?.name}` : 'Rule not found',
   };
 }
 
@@ -19,8 +24,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function Page({ params }: { params: { slug: string } }) {
-  const rule = getRuleBySlug(params.slug);
+export default async function Page({ params }: PageProps) {
+  const slug = await Promise.resolve(params.slug);
+  const rule = await getRuleBySlug(slug);
 
   if (!rule) {
     return <div>Rule not found</div>;

@@ -1,69 +1,46 @@
 export const railsRules = [
   {
     tags: ["Ruby", "Rails"],
-    title: "Rails Ruby Cursor Rules",
+    title: "Regras de Cursor Ruby on Rails",
     libs: ["rails", "ruby", "hotwire", "tailwind", "postgresql"],
     slug: "rails-ruby-cursor-rules",
     content: `
-  You are an expert in Ruby on Rails, PostgreSQL, Hotwire (Turbo and Stimulus), and Tailwind CSS.
+  Você é um especialista em Ruby on Rails, PostgreSQL, Hotwire (Turbo e Stimulus) e Tailwind CSS.
   
-  Code Style and Structure
-  - Write concise, idiomatic Ruby code with accurate examples.
-  - Follow Rails conventions and best practices.
-  - Use object-oriented and functional programming patterns as appropriate.
-  - Prefer iteration and modularization over code duplication.
-  - Use descriptive variable and method names (e.g., user_signed_in?, calculate_total).
-  - Structure files according to Rails conventions (MVC, concerns, helpers, etc.).
+  Estilo e Estrutura do Código
+  - Escreva código Ruby conciso e idiomático com exemplos precisos.
+  - Siga as convenções e melhores práticas do Rails.
+  - Use padrões de programação orientada a objetos e funcional quando apropriado.
+  - Prefira iteração e modularização em vez de duplicação de código.
+  - Use nomes descritivos para variáveis e métodos (por exemplo, user_signed_in?, calculate_total).
+  - Estruture arquivos de acordo com as convenções do Rails (MVC, concerns, helpers, etc.).
   
-  Naming Conventions
-  - Use snake_case for file names, method names, and variables.
-  - Use CamelCase for class and module names.
-  - Follow Rails naming conventions for models, controllers, and views.
+  Convenções de Nomenclatura
+  - Use snake_case para nomes de arquivos, nomes de métodos e variáveis.
+  - Use CamelCase para nomes de classes e módulos.
+  - Siga as convenções de nomenclatura do Rails para modelos, controladores e views.
   
-  Ruby and Rails Usage
-  - Use Ruby 3.x features when appropriate (e.g., pattern matching, endless methods).
-  - Leverage Rails' built-in helpers and methods.
-  - Use ActiveRecord effectively for database operations.
+  Uso de Ruby e Rails
+  - Use recursos do Ruby 3.x quando apropriado (por exemplo, correspondência de padrões, métodos infinitos).
+  - Aproveite os helpers e métodos integrados do Rails.
+  - Use ActiveRecord de forma eficaz para operações de banco de dados.
   
-  Syntax and Formatting
-  - Follow the Ruby Style Guide (https://rubystyle.guide/)
-  - Use Ruby's expressive syntax (e.g., unless, ||=, &.)
-  - Prefer single quotes for strings unless interpolation is needed.
+  Sintaxe e Formatação
+  - Siga o Guia de Estilo Ruby (https://rubystyle.guide/)
+  - Use a palavra-chave \`def\` para definir métodos.
+  - Mantenha o código limpo e bem organizado.
   
-  Error Handling and Validation
-  - Use exceptions for exceptional cases, not for control flow.
-  - Implement proper error logging and user-friendly messages.
-  - Use ActiveModel validations in models.
-  - Handle errors gracefully in controllers and display appropriate flash messages.
+  Testes
+  - Escreva testes abrangentes usando RSpec ou Minitest.
+  - Siga práticas TDD/BDD.
+  - Use factories (FactoryBot) para geração de dados de teste.
   
-  UI and Styling
-  - Use Hotwire (Turbo and Stimulus) for dynamic, SPA-like interactions.
-  - Implement responsive design with Tailwind CSS.
-  - Use Rails view helpers and partials to keep views DRY.
+  Segurança
+  - Implemente autenticação e autorização adequadas (por exemplo, Devise, Pundit).
+  - Use parâmetros fortes nos controladores.
+  - Proteja-se contra vulnerabilidades web comuns (XSS, CSRF, injeção SQL).
   
-  Performance Optimization
-  - Use database indexing effectively.
-  - Implement caching strategies (fragment caching, Russian Doll caching).
-  - Use eager loading to avoid N+1 queries.
-  - Optimize database queries using includes, joins, or select.
-  
-  Key Conventions
-  - Follow RESTful routing conventions.
-  - Use concerns for shared behavior across models or controllers.
-  - Implement service objects for complex business logic.
-  - Use background jobs (e.g., Sidekiq) for time-consuming tasks.
-  
-  Testing
-  - Write comprehensive tests using RSpec or Minitest.
-  - Follow TDD/BDD practices.
-  - Use factories (FactoryBot) for test data generation.
-  
-  Security
-  - Implement proper authentication and authorization (e.g., Devise, Pundit).
-  - Use strong parameters in controllers.
-  - Protect against common web vulnerabilities (XSS, CSRF, SQL injection).
-  
-  Follow the official Ruby on Rails guides for best practices in routing, controllers, models, views, and other Rails components.
+  Siga os guias oficiais do Ruby on Rails para melhores práticas em roteamento, controladores, modelos, views e outros componentes do Rails.
   `,
     author: {
       name: "Theo Vararu",

@@ -1,8 +1,8 @@
 export const videos = [
   {
-    title: "Cursor AI tutorial for beginners",
+    title: "Tutorial do Cursor AI para iniciantes",
     description:
-      "In this episode, I am joined by Ras Mic, a full stack engineer & YouTuber, where we dive deep into the frameworks and strategies on how to best use Cursor AI. Mic shares his unique insights into how to use and set up Cursor to make the experience of building on top of Cursor as easy and seamless as possible. Learn how to use Cursor like a pro!",
+      "Neste episódio, estou acompanhado por Ras Mic, um engenheiro full stack e YouTuber, onde mergulhamos fundo nos frameworks e estratégias sobre como usar o Cursor AI da melhor forma. Mic compartilha suas percepções únicas sobre como usar e configurar o Cursor para tornar a experiência de desenvolvimento em cima do Cursor o mais fácil e fluida possível. Aprenda a usar o Cursor como um profissional!",
     url: "https://www.youtube.com/embed/gqUQbjsYZLQ",
     author: {
       name: "Greg Isenberg",
@@ -11,9 +11,9 @@ export const videos = [
     },
   },
   {
-    title: "Using Cursor + Claude 3.5 Sonnet + Tailwind to ship 20x faster",
+    title: "Usando Cursor + Claude 3.5 Sonnet + Tailwind para enviar 20x mais rápido",
     description:
-      "Using Cursor + Claude 3.5 Sonnet + Tailwind to ship 20x faster",
+      "Usando Cursor + Claude 3.5 Sonnet + Tailwind para enviar 20x mais rápido",
     url: "https://www.youtube.com/embed/bEU15KXIAVk",
     author: {
       name: "Sahil Lavingia",
@@ -22,9 +22,9 @@ export const videos = [
     },
   },
   {
-    title: "Introduction to Cursor - AI Code Editor",
+    title: "Introdução ao Cursor - Editor de Código AI",
     description:
-      "Discover Cursor: The revolutionary AI-powered code editor that’s transforming how developers work. Learn about its key features, natural language coding capabilities, and how it compares to traditional IDEs. Perfect for both beginners and experienced coders looking to boost productivity",
+      "Descubra o Cursor: O revolucionário editor de código alimentado por AI que está transformando a forma como os desenvolvedores trabalham. Aprenda sobre suas principais características, capacidades de codificação em linguagem natural e como ele se compara aos IDEs tradicionais. Perfeito tanto para iniciantes quanto para codificadores experientes que buscam aumentar a produtividade.",
     url: "https://www.youtube.com/embed/sKxUEnylsQg",
     author: {
       name: "Tech•sistence",
@@ -32,8 +32,8 @@ export const videos = [
     },
   },
   {
-    title: "Coding with Cursor: Session 1",
-    description: "Coding with Cursor: Session 1",
+    title: "Codificando com Cursor: Sessão 1",
+    description: "Codificando com Cursor: Sessão 1",
     url: "https://www.youtube.com/embed/1CC88QGQiEA",
     author: {
       name: "Sahil Lavingia",
@@ -42,9 +42,9 @@ export const videos = [
     },
   },
   {
-    title: "How I code 159% Faster using AI (Cursor + Sonnet 3.5)",
+    title: "Como eu codifico 159% mais rápido usando AI (Cursor + Sonnet 3.5)",
     description:
-      "Cursor is a powerful new AI-powered code editor that makes coding much faster with the help of AI. In this video I will show you the fastest way to code with the best AI coding tools: Cursor and Claude Sonnet 3.5.",
+      "O Cursor é um poderoso novo editor de código alimentado por AI que torna a codificação muito mais rápida com a ajuda da AI. Neste vídeo, vou mostrar a você a maneira mais rápida de codificar com as melhores ferramentas de codificação AI: Cursor e Claude Sonnet 3.5.",
     url: "https://www.youtube.com/embed/yk9lXobJ95E",
     author: {
       name: "Volo",
@@ -53,9 +53,9 @@ export const videos = [
     },
   },
   {
-    title: "Cursor Composer: MULTI-FILE AI Coding for engineers that SHIP",
+    title: "Composer do Cursor: Codificação AI MULTI-ARQUIVO para engenheiros que ENTREGAM",
     description:
-      "Cursor Composer gives you INCREDIBLE Multi-File AI Coding Abilities",
+      "O Composer do Cursor oferece a você INCRÍVEIS habilidades de codificação AI Multi-Arquivo",
     url: "https://www.youtube.com/embed/V9_RzjqCXP8",
     author: {
       name: "IndyDevDan",
@@ -65,9 +65,9 @@ export const videos = [
   },
   {
     title:
-      "How to Build an AI Web App with Claude 3.5 and Cursor | Full Tutorial",
+      "Como construir um aplicativo web AI com Claude 3.5 e Cursor | Tutorial Completo",
     description:
-      "AI Programming Full Tutorial: YouTube Search App | Cursor - Claude 3.5 ++",
+      "Tutorial Completo de Programação AI: Aplicativo de Busca no YouTube | Cursor - Claude 3.5 ++",
     url: "https://www.youtube.com/embed/fv1rkctrEPk",
     author: {
       name: "All About AI",
@@ -76,21 +76,21 @@ export const videos = [
     },
   },
   {
-    title: "I Finally Tried The AI-Powered VS Code Killer | Cursor IDE Review",
+    title: "Eu finalmente experimentei o assassino do VS Code alimentado por AI | Revisão do Cursor IDE",
     description:
-      "I Finally Tried The AI-Powered VS Code Killer | Cursor IDE Review",
+      "Eu finalmente experimentei o assassino do VS Code alimentado por AI | Revisão do Cursor IDE",
     url: "https://www.youtube.com/embed/u3wPImWBz7c",
     author: {
-      name: "Your Average Tech Bro",
+      name: "Seu Tech Bro Médio",
       image:
         "https://yt3.ggpht.com/-5pyvUOmvkobQLYDV39VhjNU4Fp4Z178V3_pHuxrokzwinC-CFo1omaY7Ra5-A_N7gLynPS3=s88-c-k-c0x00ffffff-no-rj",
     },
   },
   {
-    title: "Cursor Editor - VS Code with GPT Built-In",
+    title: "Editor do Cursor - VS Code com GPT embutido",
     url: "https://www.youtube.com/embed/tjFnifSEEjQ",
     description:
-      "Cursor AI Editor is revolutionizing the way developers write code, offering an AI-powered environment that accelerates the software development process. With features like Ctrl+K, Copilot++, and AI chat, Cursor provides an unparalleled coding experience that’s both efficient and intuitive.",
+      "O Editor AI do Cursor está revolucionando a forma como os desenvolvedores escrevem código, oferecendo um ambiente alimentado por AI que acelera o processo de desenvolvimento de software. Com recursos como Ctrl+K, Copilot++ e chat AI, o Cursor proporciona uma experiência de codificação inigualável que é eficiente e intuitiva.",
     author: {
       name: "Chris Titus Tech",
       image:
@@ -98,10 +98,10 @@ export const videos = [
     },
   },
   {
-    title: "Coding with Cursor: Session 4 ft. @shaoruu",
+    title: "Codificando com Cursor: Sessão 4 com @shaoruu",
     url: "https://www.youtube.com/embed/42zmF9ARSWM",
     description:
-      "Coding with Cursor: Session 4 ft. @shaoruu - developer at Cursor and Cursor Composer Creator",
+      "Codificando com Cursor: Sessão 4 com @shaoruu - desenvolvedor no Cursor e criador do Cursor Composer",
     author: {
       name: "Sahil Lavingia",
       image:
@@ -109,10 +109,10 @@ export const videos = [
     },
   },
   {
-    title: "Let's dig into CursorAI, do's don't, how to use it",
+    title: "Vamos explorar o CursorAI, o que fazer e o que não fazer, como usá-lo",
     url: "https://www.youtube.com/embed/_SN7fqSNThg?si=UYS8khW30im4bfxz",
     description:
-      "@pierre_vannier walks through CursorAI, what it is, how to use it, and how to get the most out of it with Python and fastapi",
+      "@pierre_vannier explica o CursorAI, o que é, como usá-lo e como tirar o máximo proveito dele com Python e fastapi",
     author: {
       name: "Pierre Vannier",
       image:
@@ -120,10 +120,10 @@ export const videos = [
     },
   },
   {
-    title: "Cursor Composer Tutorial: Building a directory in 30 minutes from scratch",
+    title: "Tutorial do Cursor Composer: Construindo um diretório em 30 minutos do zero",
     url: "https://www.youtube.com/embed/nUTR11D8q08?si=aqh18rsdLbRWAOol",
     description:
-      "@krisbuildsstuff shows how to build web directory using Cursor Composer and V0 Dev. You'll learn to build a tool listing, implement submission features, design individual pages, and organize tools into categories, and deploy with Vercel.",
+      "@krisbuildsstuff mostra como construir um diretório web usando o Cursor Composer e V0 Dev. Você aprenderá a construir uma lista de ferramentas, implementar recursos de submissão, projetar páginas individuais e organizar ferramentas em categorias, e implantar com Vercel.",
     author: {
       name: "Kris Builds Stuff",
       image:
@@ -131,10 +131,10 @@ export const videos = [
     },
   },
   {
-    title: "Building (and deploying!) with AI-assistance using Cursor, Claude and Cloudflare",
+    title: "Construindo (e implantando!) com assistência de AI usando Cursor, Claude e Cloudflare",
     url: "https://www.youtube.com/embed/oBDdcVaRhUk?si=8j-33MdX-1nHdxkR",
     description:
-      "@rickyrobinett walks you through how to build, and deploy, an application using Cursor, Claude and Cloudflare.",
+      "@rickyrobinett mostra como construir e implantar uma aplicação usando Cursor, Claude e Cloudflare.",
     author: {
       name: "Cloudflare",
       image:

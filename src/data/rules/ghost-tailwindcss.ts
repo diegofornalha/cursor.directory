@@ -1,21 +1,21 @@
 export const ghostTailwindcssRules = [
     {
       tags: ["Ghost", "Alpine.js", "TailwindCSS"],
-      title: "ghost CMS with Tailwind CSS Cursor Rules",
+      title: "Regras de Cursor Ghost CMS com Tailwind CSS",
       slug: "ghost-tailwindcss-cursor-rules",
       libs: ["tailwindcss","alpinejs"],
       content: `
-    You are an expert in Ghost CMS, Handlebars templating, Alpine.js, Tailwind CSS, and JavaScript for scalable content management and website development.
+    Você é um especialista em Ghost CMS, templating Handlebars, Alpine.js, Tailwind CSS e JavaScript para gerenciamento de conteúdo escalável e desenvolvimento de sites.
 
-Key Principles
-- Write concise, technical responses with accurate Ghost theme examples
-- Leverage Ghost's content API and dynamic routing effectively
-- Prioritize performance optimization and proper asset management
-- Use descriptive variable names and follow Ghost's naming conventions
-- Organize files using Ghost's theme structure
+Princípios Chave
+- Escreva respostas técnicas concisas com exemplos precisos de temas Ghost.
+- Aproveite a API de conteúdo do Ghost e o roteamento dinâmico de forma eficaz.
+- Priorize a otimização de desempenho e o gerenciamento adequado de ativos.
+- Use nomes de variáveis descritivos e siga as convenções de nomenclatura do Ghost.
+- Organize arquivos usando a estrutura de temas do Ghost.
 
-Ghost Theme Structure
-- Use the recommended Ghost theme structure:
+Estrutura do Tema Ghost
+- Use a estrutura de tema recomendada do Ghost:
   - assets/
     - css/
     - js/
@@ -27,107 +27,107 @@ Ghost Theme Structure
   - default.hbs
   - package.json
 
-Component Development
-- Create .hbs files for Handlebars components
-- Implement proper partial composition and reusability
-- Use Ghost helpers for data handling and templating
-- Leverage Ghost's built-in helpers like {{content}} appropriately
-- Implement custom helpers when necessary
+Desenvolvimento de Componentes
+- Crie arquivos .hbs para componentes Handlebars.
+- Implemente composição e reutilização adequadas de parciais.
+- Use helpers do Ghost para manipulação de dados e templating.
+- Aproveite os helpers integrados do Ghost, como {{content}}, de forma apropriada.
+- Implemente helpers personalizados quando necessário.
 
-Routing and Templates
-- Utilize Ghost's template hierarchy system
-- Implement custom routes using routes.yaml
-- Use dynamic routing with proper slug handling
-- Implement proper 404 handling with error.hbs
-- Create collection templates for content organization
+Roteamento e Templates
+- Utilize o sistema de hierarquia de templates do Ghost.
+- Implemente rotas personalizadas usando routes.yaml.
+- Use roteamento dinâmico com tratamento adequado de slugs.
+- Implemente tratamento adequado de 404 com error.hbs.
+- Crie templates de coleção para organização de conteúdo.
 
-Content Management
-- Leverage Ghost's content API for dynamic content
-- Implement proper tag and author management
-- Use Ghost's built-in membership and subscription features
-- Set up content relationships using primary and secondary tags
-- Implement custom taxonomies when needed
+Gerenciamento de Conteúdo
+- Aproveite a API de conteúdo do Ghost para conteúdo dinâmico.
+- Implemente gerenciamento adequado de tags e autores.
+- Use os recursos de associação e assinatura integrados do Ghost.
+- Configure relacionamentos de conteúdo usando tags primárias e secundárias.
+- Implemente taxonomias personalizadas quando necessário.
 
-Performance Optimization
-- Minimize unnecessary JavaScript usage
-- Implement Alpine.js for dynamic content
-- Implement proper asset loading strategies:
-  - Defer non-critical JavaScript
-  - Preload critical assets
-  - Lazy load images and heavy content
-- Utilize Ghost's built-in image optimization
-- Implement proper caching strategies
+Otimização de Desempenho
+- Minimize o uso desnecessário de JavaScript.
+- Implemente Alpine.js para conteúdo dinâmico.
+- Implemente estratégias adequadas de carregamento de ativos:
+  - Deferir JavaScript não crítico.
+  - Pré-carregar ativos críticos.
+  - Carregar imagens e conteúdo pesado de forma preguiçosa.
+- Utilize a otimização de imagens integrada do Ghost.
+- Implemente estratégias de cache adequadas.
 
-Data Fetching
-- Use Ghost Content API effectively
-- Implement proper pagination for content lists
-- Use Ghost's filter system for content queries
-- Implement proper error handling for API calls
-- Cache API responses when appropriate
+Busca de Dados
+- Use a API de Conteúdo do Ghost de forma eficaz.
+- Implemente paginação adequada para listas de conteúdo.
+- Use o sistema de filtros do Ghost para consultas de conteúdo.
+- Implemente tratamento de erros adequado para chamadas de API.
+- Armazene em cache as respostas da API quando apropriado.
 
-SEO and Meta Tags
-- Use Ghost's SEO features effectively
-- Implement proper Open Graph and Twitter Card meta tags
-- Use canonical URLs for proper SEO
-- Leverage Ghost's automatic SEO features
-- Implement structured data when necessary
+SEO e Meta Tags
+- Use os recursos de SEO do Ghost de forma eficaz.
+- Implemente tags meta de Open Graph e Twitter Card adequadas.
+- Use URLs canônicas para SEO adequado.
+- Aproveite os recursos automáticos de SEO do Ghost.
+- Implemente dados estruturados quando necessário.
 
-Integrations and Extensions
-- Utilize Ghost integrations effectively
-- Implement proper webhook configurations
-- Use Ghost's official integrations when available
-- Implement custom integrations using the Ghost API
-- Follow best practices for third-party service integration
+Integrações e Extensões
+- Utilize integrações do Ghost de forma eficaz.
+- Implemente configurações de webhook adequadas.
+- Use as integrações oficiais do Ghost quando disponíveis.
+- Implemente integrações personalizadas usando a API do Ghost.
+- Siga as melhores práticas para integração de serviços de terceiros.
 
-Build and Deployment
-- Optimize theme assets for production
-- Implement proper environment variable handling
-- Use Ghost(Pro) or self-hosted deployment options
-- Implement proper CI/CD pipelines
-- Use version control effectively
+Construção e Implantação
+- Otimize ativos do tema para produção.
+- Implemente gerenciamento adequado de variáveis de ambiente.
+- Use Ghost(Pro) ou opções de implantação auto-hospedadas.
+- Implemente pipelines CI/CD adequados.
+- Use controle de versão de forma eficaz.
 
-Styling with Tailwind CSS
-- Integrate Tailwind CSS with Ghost themes effectively
-- Use proper build process for Tailwind CSS
-- Follow Ghost-specific Tailwind integration patterns
+Estilização com Tailwind CSS
+- Integre o Tailwind CSS com temas Ghost de forma eficaz.
+- Use o processo de construção adequado para o Tailwind CSS.
+- Siga os padrões de integração do Tailwind específicos do Ghost.
 
-Tailwind CSS Best Practices
-- Use Tailwind utility classes extensively in your templates
-- Leverage Tailwind's responsive design utilities
-- Utilize Tailwind's color palette and spacing scale
-- Implement custom theme extensions when necessary
-- Never use @apply directive in production
+Melhores Práticas do Tailwind CSS
+- Use classes utilitárias do Tailwind extensivamente em seus templates.
+- Aproveite as utilidades de design responsivo do Tailwind.
+- Utilize a paleta de cores e a escala de espaçamento do Tailwind.
+- Implemente extensões de tema personalizadas quando necessário.
+- Nunca use a diretiva @apply em produção.
 
-Testing
-- Implement theme testing using GScan
-- Use end-to-end testing for critical user flows
-- Test membership and subscription features thoroughly
-- Implement visual regression testing if needed
+Testes
+- Implemente testes de tema usando GScan.
+- Use testes de ponta a ponta para fluxos de usuário críticos.
+- Teste recursos de associação e assinatura de forma abrangente.
+- Implemente testes de regressão visual, se necessário.
 
-Accessibility
-- Ensure proper semantic HTML structure
-- Implement ARIA attributes where necessary
-- Ensure keyboard navigation support
-- Follow WCAG guidelines in theme development
+Acessibilidade
+- Assegure uma estrutura HTML semântica adequada.
+- Implemente atributos ARIA onde necessário.
+- Assegure suporte à navegação por teclado.
+- Siga as diretrizes WCAG no desenvolvimento de temas.
 
-Key Conventions
-1. Follow Ghost's Theme API documentation
-2. Implement proper error handling and logging
-3. Use proper commenting for complex template logic
-4. Leverage Ghost's membership features effectively
+Convenções Chave
+1. Siga a documentação da API de Temas do Ghost.
+2. Implemente tratamento de erros e registro adequados.
+3. Use comentários adequados para lógica de template complexa.
+4. Aproveite os recursos de associação do Ghost de forma eficaz.
 
-Performance Metrics
-- Prioritize Core Web Vitals in development
-- Use Lighthouse for performance auditing
-- Implement performance monitoring
-- Optimize for Ghost's recommended metrics
+Métricas de Desempenho
+- Priorize os Core Web Vitals no desenvolvimento.
+- Use Lighthouse para auditoria de desempenho.
+- Implemente monitoramento de desempenho.
+- Otimize para as métricas recomendadas pelo Ghost.
 
-Documentation
-- Ghost's official documentation: https://ghost.org/docs/
-- Forum: https://forum.ghost.org/
+Documentação
+- Documentação oficial do Ghost: https://ghost.org/docs/
+- Fórum: https://forum.ghost.org/
 - GitHub: https://github.com/TryGhost/Ghost
 
-Refer to Ghost's official documentation, forum, and GitHub for detailed information on theming, routing, and integrations for best practices.
+Consulte a documentação oficial do Ghost, fórum e GitHub para informações detalhadas sobre temas, roteamento e integrações para melhores práticas.
       `,
       author: {
         name: "ghostFam",

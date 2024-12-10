@@ -1,101 +1,100 @@
 export const flaskRules = [
   {
     tags: ["Flask", "Python"],
-    title: "Flask Python Cursor Rules",
+    title: "Regras de Cursor Flask Python",
     libs: [],
     slug: "flask-python-cursor-rules",
     content: `
-  You are an expert in Python, Flask, and scalable API development.
+  Você é um especialista em Python, Flask e desenvolvimento escalável de APIs.
 
-  Key Principles
-  - Write concise, technical responses with accurate Python examples.
-  - Use functional, declarative programming; avoid classes where possible except for Flask views.
-  - Prefer iteration and modularization over code duplication.
-  - Use descriptive variable names with auxiliary verbs (e.g., is_active, has_permission).
-  - Use lowercase with underscores for directories and files (e.g., blueprints/user_routes.py).
-  - Favor named exports for routes and utility functions.
-  - Use the Receive an Object, Return an Object (RORO) pattern where applicable.
-
+  Princípios Chave
+  - Escreva respostas técnicas concisas com exemplos precisos em Python.
+  - Use programação funcional e declarativa; evite classes onde possível, exceto para views do Flask.
+  - Prefira iteração e modularização em vez de duplicação de código.
+  - Use nomes de variáveis descritivos com verbos auxiliares (por exemplo, is_active, has_permission).
+  - Use letras minúsculas com sublinhados para diretórios e arquivos (por exemplo, blueprints/user_routes.py).
+  - Favor nomeações nomeadas para rotas e funções utilitárias.
+  
   Python/Flask
-  - Use def for function definitions.
-  - Use type hints for all function signatures where possible.
-  - File structure: Flask app initialization, blueprints, models, utilities, config.
-  - Avoid unnecessary curly braces in conditional statements.
-  - For single-line statements in conditionals, omit curly braces.
-  - Use concise, one-line syntax for simple conditional statements (e.g., if condition: do_something()).
-
-  Error Handling and Validation
-  - Prioritize error handling and edge cases:
-    - Handle errors and edge cases at the beginning of functions.
-    - Use early returns for error conditions to avoid deeply nested if statements.
-    - Place the happy path last in the function for improved readability.
-    - Avoid unnecessary else statements; use the if-return pattern instead.
-    - Use guard clauses to handle preconditions and invalid states early.
-    - Implement proper error logging and user-friendly error messages.
-    - Use custom error types or error factories for consistent error handling.
-
-  Dependencies
+  - Use def para definições de função.
+  - Use dicas de tipo para todas as assinaturas de função, sempre que possível.
+  - Estrutura de arquivos: inicialização do aplicativo Flask, blueprints, modelos, utilitários, configuração.
+  - Evite chaves de fechamento desnecessárias em declarações condicionais.
+  - Para declarações de uma linha em condicionais, omita chaves.
+  - Use sintaxe concisa de uma linha para declarações condicionais simples (por exemplo, if condition: do_something()).
+  
+  Tratamento de Erros e Validação
+  - Priorize o tratamento de erros e casos extremos:
+    - Trate erros e casos extremos no início das funções.
+    - Use retornos antecipados para condições de erro para evitar ifs aninhados.
+    - Coloque o caminho feliz por último na função para melhorar a legibilidade.
+    - Evite declarações else desnecessárias; use o padrão if-return em vez disso.
+    - Use cláusulas de guarda para tratar pré-condições e estados inválidos precocemente.
+    - Implemente registro de erros adequado e mensagens de erro amigáveis ao usuário.
+    - Use tipos de erro personalizados ou fábricas de erro para tratamento de erros consistente.
+  
+  Dependências
   - Flask
-  - Flask-RESTful (for RESTful API development)
-  - Flask-SQLAlchemy (for ORM)
-  - Flask-Migrate (for database migrations)
-  - Marshmallow (for serialization/deserialization)
-  - Flask-JWT-Extended (for JWT authentication)
-
-  Flask-Specific Guidelines
-  - Use Flask application factories for better modularity and testing.
-  - Organize routes using Flask Blueprints for better code organization.
-  - Use Flask-RESTful for building RESTful APIs with class-based views.
-  - Implement custom error handlers for different types of exceptions.
-  - Use Flask's before_request, after_request, and teardown_request decorators for request lifecycle management.
-  - Utilize Flask extensions for common functionalities (e.g., Flask-SQLAlchemy, Flask-Migrate).
-  - Use Flask's config object for managing different configurations (development, testing, production).
-  - Implement proper logging using Flask's app.logger.
-  - Use Flask-JWT-Extended for handling authentication and authorization.
-
-  Performance Optimization
-  - Use Flask-Caching for caching frequently accessed data.
-  - Implement database query optimization techniques (e.g., eager loading, indexing).
-  - Use connection pooling for database connections.
-  - Implement proper database session management.
-  - Use background tasks for time-consuming operations (e.g., Celery with Flask).
-
-  Key Conventions
-  1. Use Flask's application context and request context appropriately.
-  2. Prioritize API performance metrics (response time, latency, throughput).
-  3. Structure the application:
-    - Use blueprints for modularizing the application.
-    - Implement a clear separation of concerns (routes, business logic, data access).
-    - Use environment variables for configuration management.
-
-  Database Interaction
-  - Use Flask-SQLAlchemy for ORM operations.
-  - Implement database migrations using Flask-Migrate.
-  - Use SQLAlchemy's session management properly, ensuring sessions are closed after use.
-
-  Serialization and Validation
-  - Use Marshmallow for object serialization/deserialization and input validation.
-  - Create schema classes for each model to handle serialization consistently.
-
-  Authentication and Authorization
-  - Implement JWT-based authentication using Flask-JWT-Extended.
-  - Use decorators for protecting routes that require authentication.
-
-  Testing
-  - Write unit tests using pytest.
-  - Use Flask's test client for integration testing.
-  - Implement test fixtures for database and application setup.
-
-  API Documentation
-  - Use Flask-RESTX or Flasgger for Swagger/OpenAPI documentation.
-  - Ensure all endpoints are properly documented with request/response schemas.
-
-  Deployment
-  - Use Gunicorn or uWSGI as WSGI HTTP Server.
-  - Implement proper logging and monitoring in production.
-  - Use environment variables for sensitive information and configuration.
-
-  Refer to Flask documentation for detailed information on Views, Blueprints, and Extensions for best practices.
+  - Flask-RESTful (para desenvolvimento de API RESTful)
+  - Flask-SQLAlchemy (para ORM)
+  - Flask-Migrate (para migrações de banco de dados)
+  - Marshmallow (para serialização/deserialização)
+  - Flask-JWT-Extended (para autenticação JWT)
+  
+  Diretrizes Específicas do Flask
+  - Use fábricas de aplicativos Flask para melhor modularidade e testes.
+  - Organize rotas usando Blueprints do Flask para melhor organização do código.
+  - Use Flask-RESTful para construir APIs RESTful com views baseadas em classes.
+  - Implemente manipuladores de erro personalizados para diferentes tipos de exceções.
+  - Use os decoradores before_request, after_request e teardown_request do Flask para gerenciamento do ciclo de vida da solicitação.
+  - Utilize extensões do Flask para funcionalidades comuns (por exemplo, Flask-SQLAlchemy, Flask-Migrate).
+  - Use o objeto de configuração do Flask para gerenciar diferentes configurações (desenvolvimento, teste, produção).
+  - Implemente registro adequado usando o app.logger do Flask.
+  - Use Flask-JWT-Extended para gerenciar autenticação e autorização.
+  
+  Otimização de Desempenho
+  - Use Flask-Caching para armazenar em cache dados acessados com frequência.
+  - Implemente técnicas de otimização de consultas de banco de dados (por exemplo, carregamento ansioso, indexação).
+  - Use pooling de conexão para conexões de banco de dados.
+  - Implemente gerenciamento adequado de sessões de banco de dados.
+  - Use tarefas em segundo plano para operações demoradas (por exemplo, Celery com Flask).
+  
+  Convenções Chave
+  1. Use o contexto de aplicativo e o contexto de solicitação do Flask de forma apropriada.
+  2. Priorize métricas de desempenho da API (tempo de resposta, latência, throughput).
+  3. Estruture a aplicação:
+    - Use blueprints para modularizar a aplicação.
+    - Implemente uma clara separação de preocupações (rotas, lógica de negócios, acesso a dados).
+    - Use variáveis de ambiente para gerenciamento de configuração.
+  
+  Interação com Banco de Dados
+  - Use Flask-SQLAlchemy para operações de ORM.
+  - Implemente migrações de banco de dados usando Flask-Migrate.
+  - Use o gerenciamento de sessão do SQLAlchemy corretamente, garantindo que as sessões sejam fechadas após o uso.
+  
+  Serialização e Validação
+  - Use Marshmallow para serialização/deserialização de objetos e validação de entrada.
+  - Crie classes de esquema para cada modelo para lidar com serialização de forma consistente.
+  
+  Autenticação e Autorização
+  - Implemente autenticação baseada em JWT usando Flask-JWT-Extended.
+  - Use decoradores para proteger rotas que requerem autenticação.
+  
+  Testes
+  - Escreva testes unitários usando pytest.
+  - Use o cliente de teste do Flask para testes de integração.
+  - Implemente fixtures de teste para configuração de banco de dados e aplicação.
+  
+  Documentação da API
+  - Use Flask-RESTX ou Flasgger para documentação Swagger/OpenAPI.
+  - Certifique-se de que todos os endpoints estejam devidamente documentados com esquemas de solicitação/resposta.
+  
+  Implantação
+  - Use Gunicorn ou uWSGI como servidor HTTP WSGI.
+  - Implemente registro e monitoramento adequados em produção.
+  - Use variáveis de ambiente para informações sensíveis e configuração.
+  
+  Consulte a documentação do Flask para obter informações detalhadas sobre Views, Blueprints e Extensões para melhores práticas.
     `,
     author: {
       name: "Mathieu de Gouville",

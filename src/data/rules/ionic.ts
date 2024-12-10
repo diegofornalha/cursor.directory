@@ -1,32 +1,31 @@
 export const ionicRules = [
   {
     tags: ["ionic", "cordova", "angular"],
-    title: "Ionic Cursor Rules",
+    title: "Regras de Cursor Ionic",
     slug: "ionic-angular-cursor-rules",
     libs: [],
     content: `
-  You are an expert in Ionic and Cordova, Working with Typescript and Angular building apps for mobile and web.
+  Você é um especialista em Ionic e Cordova, trabalhando com TypeScript e Angular para construir aplicativos para mobile e web.
 
-  Project Structure and File Naming
-  - Organize by feature directories (e.g., 'services/', 'components/', 'pipes/')
-  - Use environment variables for different stages (development, staging, production)
-  - Create build scripts for bundling and deployment
-  - Implement CI/CD pipeline
-  - Set up staging and canary environments
+  Estrutura do Projeto e Nomenclatura de Arquivos
+  - Organize por diretórios de recursos (por exemplo, 'services/', 'components/', 'pipes/')
+  - Use variáveis de ambiente para diferentes estágios (desenvolvimento, staging, produção)
+  - Crie scripts de build para empacotamento e implantação
+  - Implemente pipeline CI/CD
+  - Configure ambientes de staging e canary
 
-
-## Project Structure and Organization
-  - Use descriptive names for variables and functions (e.g 'getUsers', 'calculateTotalPrice').
-  - Keep classes small and focused.
-  - Avoid global state when possible.
-  - Manage routing through a dedicated module
-  - Use the latest ES6+ features and best practices for Typescript and Angular.
-  - Centralize API calls and error handling through services
-  - Manage all storage through single point of entry and retrievals. Also put storage keys at single to check and find.
+## Estrutura do Projeto e Organização
+  - Use nomes descritivos para variáveis e funções (por exemplo, 'getUsers', 'calculateTotalPrice').
+  - Mantenha classes pequenas e focadas.
+  - Evite estado global sempre que possível.
+  - Gerencie o roteamento através de um módulo dedicado
+  - Use os recursos e melhores práticas mais recentes do ES6+ para TypeScript e Angular.
+  - Centralize chamadas de API e tratamento de erros através de serviços
+  - Gerencie todo o armazenamento através de um único ponto de entrada e recuperações. Também coloque chaves de armazenamento em um único lugar para verificar e encontrar.
   
-## Naming Conventions
-  - camelCase: functions, variables (e.g., \`getUsers\`, \`totalPrice\`)
-  - kebab-case: file names (e.g., \`user-service.ts\`, \`home-component.ts\`)
+## Convenções de Nomenclatura
+  - camelCase: funções, variáveis (por exemplo, \`getUsers\`, \`totalPrice\`)
+  - kebab-case: nomes de arquivos (por exemplo, \`user-service.ts\`, \`home-component.ts\`)
   - PascalCase: classes (e.g., \`UserService\`)
   - Booleans: use prefixes like 'should', 'has', 'is' (e.g., \`shouldLoadData\` \`isLoading\`).
   - UPPERCASE: constants and global variables (e.g., \`API_URL\` \`APP_VERSION\`).
@@ -65,9 +64,9 @@ export const ionicRules = [
   Follow the official Ionic/Angular guides for best practices.
   `,
     author: {
-      name: "Fahad Malk",
-      url: "https://github.com/fahad-malk",
-      avatar: "https://avatars.githubusercontent.com/u/4982",
+      name: "Nome do Autor",
+      url: "URL do Autor",
+      avatar: "URL do Avatar",
     },
   },
 ];

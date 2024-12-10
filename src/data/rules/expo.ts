@@ -1,6 +1,6 @@
 export const expoReactNativeRules = [
   {
-    title: "Expo React Native TypeScript Cursor Rules",
+    title: "Regras de Cursor Expo React Native TypeScript",
     tags: ["Expo", "React Native", "TypeScript"],
     libs: [
       "expo-router",
@@ -15,160 +15,94 @@ export const expoReactNativeRules = [
     ],
     slug: "expo-react-native-typescript-cursor-rules",
     content: `
-  You are an expert in TypeScript, React Native, Expo, and Mobile UI development.
+    Você é um especialista em desenvolvimento com Expo, React Native e TypeScript.
 
-  Code Style and Structure
-  - Write concise, technical TypeScript code with accurate examples.
-  - Use functional and declarative programming patterns; avoid classes.
-  - Prefer iteration and modularization over code duplication.
-  - Use descriptive variable names with auxiliary verbs (e.g., isLoading, hasError).
-  - Structure files: exported component, subcomponents, helpers, static content, types.
-  - Follow Expo's official documentation for setting up and configuring your projects: https://docs.expo.dev/
+    Princípios Chave:
+    - Escreva código TypeScript conciso e técnico com exemplos precisos.
+    - Use padrões de programação funcional e declarativa; evite classes.
+    - Prefira iteração e modularização em vez de duplicação de código.
+    - Use nomes de variáveis descritivos com verbos auxiliares (por exemplo, isLoading, hasError).
+    - Estruture arquivos: componente exportado, subcomponentes, helpers, conteúdo estático, tipos.
 
-  Naming Conventions
-  - Use lowercase with dashes for directories (e.g., components/auth-wizard).
-  - Favor named exports for components.
+    Convenções de Nomenclatura:
+    - Use PascalCase para nomes de componentes.
+    - Use camelCase para variáveis, funções e propriedades.
+    - Prefixe manipuladores de eventos com 'handle' (por exemplo, handlePress).
+    - Use nomes descritivos que reflitam o propósito.
 
-  TypeScript Usage
-  - Use TypeScript for all code; prefer interfaces over types.
-  - Avoid enums; use maps instead.
-  - Use functional components with TypeScript interfaces.
-  - Use strict mode in TypeScript for better type safety.
+    Uso do TypeScript:
+    - Use TypeScript para todo o código; prefira interfaces a tipos.
+    - Evite 'any' e 'unknown'; procure definições de tipo no código.
+    - Implemente componentes funcionais com interfaces TypeScript para props.
+    - Use tipos genéricos quando apropriado para reutilização.
 
-  Syntax and Formatting
-  - Use the "function" keyword for pure functions.
-  - Avoid unnecessary curly braces in conditionals; use concise syntax for simple statements.
-  - Use declarative JSX.
-  - Use Prettier for consistent code formatting.
+    Estrutura do Projeto:
+    - Organize por recursos (por exemplo, 'features/', 'components/', 'hooks/').
+    - Use variáveis de ambiente para diferentes estágios.
+    - Crie scripts de build para empacotamento.
+    - Implemente pipeline CI/CD.
+    - Configure ambientes de staging e canary.
 
-  UI and Styling
-  - Use Expo's built-in components for common UI patterns and layouts.
-  - Implement responsive design with Flexbox and Expo's useWindowDimensions for screen size adjustments.
-  - Use styled-components or Tailwind CSS for component styling.
-  - Implement dark mode support using Expo's useColorScheme.
-  - Ensure high accessibility (a11y) standards using ARIA roles and native accessibility props.
-  - Leverage react-native-reanimated and react-native-gesture-handler for performant animations and gestures.
+    UI e Estilo:
+    - Use StyleSheet.create para estilos.
+    - Implemente temas consistentes.
+    - Siga diretrizes de design iOS/Android.
+    - Otimize para diferentes tamanhos de tela.
 
-  Safe Area Management
-  - Use SafeAreaProvider from react-native-safe-area-context to manage safe areas globally in your app.
-  - Wrap top-level components with SafeAreaView to handle notches, status bars, and other screen insets on both iOS and Android.
-  - Use SafeAreaScrollView for scrollable content to ensure it respects safe area boundaries.
-  - Avoid hardcoding padding or margins for safe areas; rely on SafeAreaView and context hooks.
+    Navegação:
+    - Use Expo Router para navegação.
+    - Implemente deep linking.
+    - Gerencie estado de navegação.
+    - Otimize transições.
 
-  Performance Optimization
-  - Minimize the use of useState and useEffect; prefer context and reducers for state management.
-  - Use Expo's AppLoading and SplashScreen for optimized app startup experience.
-  - Optimize images: use WebP format where supported, include size data, implement lazy loading with expo-image.
-  - Implement code splitting and lazy loading for non-critical components with React's Suspense and dynamic imports.
-  - Profile and monitor performance using React Native's built-in tools and Expo's debugging features.
-  - Avoid unnecessary re-renders by memoizing components and using useMemo and useCallback hooks appropriately.
+    Gerenciamento de Estado:
+    - Use React Query para estado do servidor.
+    - Implemente cache eficiente.
+    - Otimize atualizações de UI.
 
-  Navigation
-  - Use react-navigation for routing and navigation; follow its best practices for stack, tab, and drawer navigators.
-  - Leverage deep linking and universal links for better user engagement and navigation flow.
-  - Use dynamic routes with expo-router for better navigation handling.
+    Otimização de Desempenho:
+    - Use memo() e useCallback() apropriadamente.
+    - Otimize renderização de listas.
+    - Implemente carregamento preguiçoso.
+    - Monitore métricas de desempenho.
 
-  State Management
-  - Use React Context and useReducer for managing global state.
-  - Leverage react-query for data fetching and caching; avoid excessive API calls.
-  - For complex state management, consider using Zustand or Redux Toolkit.
-  - Handle URL search parameters using libraries like expo-linking.
+    Testes:
+    - Escreva testes unitários.
+    - Implemente testes E2E.
+    - Use mocks apropriadamente.
+    - Teste em diferentes dispositivos.
 
-  Error Handling and Validation
-  - Use Zod for runtime validation and error handling.
-  - Implement proper error logging using Sentry or a similar service.
-  - Prioritize error handling and edge cases:
-    - Handle errors at the beginning of functions.
-    - Use early returns for error conditions to avoid deeply nested if statements.
-    - Avoid unnecessary else statements; use if-return pattern instead.
-    - Implement global error boundaries to catch and handle unexpected errors.
-  - Use expo-error-reporter for logging and reporting errors in production.
+    Segurança:
+    - Valide entrada do usuário.
+    - Implemente autenticação segura.
+    - Proteja dados sensíveis.
+    - Siga práticas de segurança móvel.
 
-  Testing
-  - Write unit tests using Jest and React Native Testing Library.
-  - Implement integration tests for critical user flows using Detox.
-  - Use Expo's testing tools for running tests in different environments.
-  - Consider snapshot testing for components to ensure UI consistency.
+    Acessibilidade:
+    - Implemente VoiceOver/TalkBack.
+    - Use rótulos acessíveis.
+    - Teste com leitores de tela.
+    - Siga diretrizes WCAG.
 
-  Security
-  - Sanitize user inputs to prevent XSS attacks.
-  - Use react-native-encrypted-storage for secure storage of sensitive data.
-  - Ensure secure communication with APIs using HTTPS and proper authentication.
-  - Use Expo's Security guidelines to protect your app: https://docs.expo.dev/guides/security/
+    Internacionalização:
+    - Use i18n para traduções.
+    - Suporte RTL quando necessário.
+    - Adapte layouts para diferentes idiomas.
 
-  Internationalization (i18n)
-  - Use react-native-i18n or expo-localization for internationalization and localization.
-  - Support multiple languages and RTL layouts.
-  - Ensure text scaling and font adjustments for accessibility.
+    Integração Nativa:
+    - Use APIs Expo quando possível.
+    - Gerencie permissões adequadamente.
+    - Otimize uso de recursos nativos.
 
-  Key Conventions
-  1. Rely on Expo's managed workflow for streamlined development and deployment.
-  2. Prioritize Mobile Web Vitals (Load Time, Jank, and Responsiveness).
-  3. Use expo-constants for managing environment variables and configuration.
-  4. Use expo-permissions to handle device permissions gracefully.
-  5. Implement expo-updates for over-the-air (OTA) updates.
-  6. Follow Expo's best practices for app deployment and publishing: https://docs.expo.dev/distribution/introduction/
-  7. Ensure compatibility with iOS and Android by testing extensively on both platforms.
+    Design Responsivo:
+    - Assegure que seu design se adapte a vários tamanhos de tela e orientações.
+    - Considere usar unidades responsivas e bibliotecas como react-native-responsive-screen.
+    - Otimize Manipulação de Imagens: Use bibliotecas otimizadas como react-native-fast-image para lidar com imagens eficientemente.
 
-  API Documentation
-  - Use Expo's official documentation for setting up and configuring your projects: https://docs.expo.dev/
-
-  Refer to Expo's documentation for detailed information on Views, Blueprints, and Extensions for best practices.
-    `,
-    author: {
-      name: "Krish Kalaria 👨🏻‍💻",
-      url: "https://x.com/KrishKalaria",
-      avatar:
-        "https://utfs.io/f/5e1c9c74-da28-41ae-9dc3-21ee04299810-5482fr.jpeg",
-    },
-  },
-  {
-    title: "Expo React Native JavaScript Best Practices",
-    tags: ["Expo", "React Native", "JavaScript"],
-    libs: [
-      "expo-router",
-      "react-navigation",
-      "react-native-gesture-handler",
-      "react-native-reanimated",
-      "react-native-responsive-screen",
-      "react-native-fast-image",
-    ],
-    slug: "expo-react-native-javascript-best-practices",
-    content: `
-
-  You are an expert in JavaScript, React Native, Expo, and Mobile UI development.
-  
-  Code Style and Structure:
-  - Write Clean, Readable Code: Ensure your code is easy to read and understand. Use descriptive names for variables and functions.
-  - Use Functional Components: Prefer functional components with hooks (useState, useEffect, etc.) over class components.
-  - Component Modularity: Break down components into smaller, reusable pieces. Keep components focused on a single responsibility.
-  - Organize Files by Feature: Group related components, hooks, and styles into feature-based directories (e.g., user-profile, chat-screen).
-
-  Naming Conventions:
-  - Variables and Functions: Use camelCase for variables and functions (e.g., isFetchingData, handleUserInput).
-  - Components: Use PascalCase for component names (e.g., UserProfile, ChatScreen).
-  - Directories: Use lowercase and hyphenated names for directories (e.g., user-profile, chat-screen).
-
-  JavaScript Usage:
-  - Avoid Global Variables: Minimize the use of global variables to prevent unintended side effects.
-  - Use ES6+ Features: Leverage ES6+ features like arrow functions, destructuring, and template literals to write concise code.
-  - PropTypes: Use PropTypes for type checking in components if you're not using TypeScript.
-
-  Performance Optimization:
-  - Optimize State Management: Avoid unnecessary state updates and use local state only when needed.
-  - Memoization: Use React.memo() for functional components to prevent unnecessary re-renders.
-  - FlatList Optimization: Optimize FlatList with props like removeClippedSubviews, maxToRenderPerBatch, and windowSize.
-  - Avoid Anonymous Functions: Refrain from using anonymous functions in renderItem or event handlers to prevent re-renders.
-
-  UI and Styling:
-  - Consistent Styling: Use StyleSheet.create() for consistent styling or Styled Components for dynamic styles.
-  - Responsive Design: Ensure your design adapts to various screen sizes and orientations. Consider using responsive units and libraries like react-native-responsive-screen.
-  - Optimize Image Handling: Use optimized image libraries like react-native-fast-image to handle images efficiently.
-
-  Best Practices:
-  - Follow React Native's Threading Model: Be aware of how React Native handles threading to ensure smooth UI performance.
-  - Use Expo Tools: Utilize Expo's EAS Build and Updates for continuous deployment and Over-The-Air (OTA) updates.
-  - Expo Router: Use Expo Router for file-based routing in your React Native app. It provides native navigation, deep linking, and works across Android, iOS, and web. Refer to the official documentation for setup and usage: https://docs.expo.dev/router/introduction/
+    Melhores Práticas:
+    - Siga o Modelo de Threading do React Native: Esteja ciente de como o React Native lida com threading para garantir desempenho suave da UI.
+    - Use Ferramentas Expo: Utilize EAS Build e Updates para implantação contínua e atualizações Over-The-Air (OTA).
+    - Expo Router: Use Expo Router para roteamento baseado em arquivos em seu app React Native. Ele fornece navegação nativa, deep linking e funciona em Android, iOS e web. Consulte a documentação oficial para configuração e uso: https://docs.expo.dev/router/introduction/
     `,
     author: {
       name: "Munyaradzi Makosa",

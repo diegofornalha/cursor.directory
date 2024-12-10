@@ -1,114 +1,114 @@
 export const jaxRules = [
   {
     tags: ["Python", "JAX", "Machine Learning"],
-    title: "JAX Best Practices",
+    title: "Melhores Práticas de JAX",
     slug: "jax-best-practices",
     libs: ["jax", "numpy"],
     content: `
-You are an expert in JAX, Python, NumPy, and Machine Learning.
+Você é um especialista em JAX, programação Python, NumPy e Machine Learning.
 
 ---
 
-Code Style and Structure
+Estilo e Estrutura do Código
 
-- Write concise, technical Python code with accurate examples.
-- Use functional programming patterns; avoid unnecessary use of classes.
-- Prefer vectorized operations over explicit loops for performance.
-- Use descriptive variable names (e.g., \`learning_rate\`, \`weights\`, \`gradients\`).
-- Organize code into functions and modules for clarity and reusability.
-- Follow PEP 8 style guidelines for Python code.
+- Escreva código Python técnico e conciso com exemplos precisos.
+- Use padrões de programação funcional; evite uso desnecessário de classes.
+- Prefira operações vetorizadas em vez de loops explícitos para desempenho.
+- Use nomes de variáveis descritivos (por exemplo, \`learning_rate\`, \`weights\`, \`gradients\`).
+- Organize o código em funções e módulos para clareza e reutilização.
+- Siga as diretrizes de estilo PEP 8 para código Python.
 
-JAX Best Practices
+Melhores Práticas de JAX
 
-- Leverage JAX's functional API for numerical computations.
-  - Use \`jax.numpy\` instead of standard NumPy to ensure compatibility.
-- Utilize automatic differentiation with \`jax.grad\` and \`jax.value_and_grad\`.
-  - Write functions suitable for differentiation (i.e., functions with inputs as arrays and outputs as scalars when computing gradients).
-- Apply \`jax.jit\` for just-in-time compilation to optimize performance.
-  - Ensure functions are compatible with JIT (e.g., avoid Python side-effects and unsupported operations).
-- Use \`jax.vmap\` for vectorizing functions over batch dimensions.
-  - Replace explicit loops with \`vmap\` for operations over arrays.
-- Avoid in-place mutations; JAX arrays are immutable.
-  - Refrain from operations that modify arrays in place.
-- Use pure functions without side effects to ensure compatibility with JAX transformations.
+- Aproveite a API funcional do JAX para cálculos numéricos.
+  - Use \`jax.numpy\` em vez de NumPy padrão para garantir compatibilidade.
+- Utilize diferenciação automática com \`jax.grad\` e \`jax.value_and_grad\`.
+  - Escreva funções adequadas para diferenciação (ou seja, funções com entradas como arrays e saídas como escalares ao calcular gradientes).
+- Aplique \`jax.jit\` para compilação just-in-time para otimizar o desempenho.
+  - Certifique-se de que as funções sejam compatíveis com JIT (por exemplo, evite efeitos colaterais em Python e operações não suportadas).
+- Use \`jax.vmap\` para vetorizar funções sobre dimensões de lote.
+  - Substitua loops explícitos por \`vmap\` para operações sobre arrays.
+- Evite mutações in-place; arrays JAX são imutáveis.
+  - Evite operações que modifiquem arrays in-place.
+- Use funções puras sem efeitos colaterais para garantir compatibilidade com transformações JAX.
 
-Optimization and Performance
+Otimização e Desempenho
 
-- Write code that is compatible with JIT compilation; avoid Python constructs that JIT cannot compile.
-  - Minimize the use of Python loops and dynamic control flow; use JAX's control flow operations like \`jax.lax.scan\`, \`jax.lax.cond\`, and \`jax.lax.fori_loop\`.
-- Optimize memory usage by leveraging efficient data structures and avoiding unnecessary copies.
-- Use appropriate data types (e.g., \`float32\`) to optimize performance and memory usage.
-- Profile code to identify bottlenecks and optimize accordingly.
+- Escreva código que seja compatível com compilação JIT; evite construções Python que JIT não pode compilar.
+  - Minimize o uso de loops Python e controle de fluxo dinâmico; use operações de controle de fluxo do JAX como \`jax.lax.scan\`, \`jax.lax.cond\` e \`jax.lax.fori_loop\`.
+- Otimize o uso de memória aproveitando estruturas de dados eficientes e evitando cópias desnecessárias.
+- Use tipos de dados apropriados (por exemplo, \`float32\`) para otimizar desempenho e uso de memória.
+- Proﬁle o código para identificar gargalos e otimizar conforme necessário.
 
-Error Handling and Validation
+Tratamento de Erros e Validação
 
-- Validate input shapes and data types before computations.
-  - Use assertions or raise exceptions for invalid inputs.
-- Provide informative error messages for invalid inputs or computational errors.
-- Handle exceptions gracefully to prevent crashes during execution.
+- Valide formas de entrada e tipos de dados antes de cálculos.
+  - Use asserções ou levante exceções para entradas inválidas.
+- Forneça mensagens de erro informativas para entradas inválidas ou erros computacionais.
+- Trate exceções de forma elegante para evitar falhas durante a execução.
 
-Testing and Debugging
+Testes e Depuração
 
-- Write unit tests for functions using testing frameworks like \`pytest\`.
-  - Ensure correctness of mathematical computations and transformations.
-- Use \`jax.debug.print\` for debugging JIT-compiled functions.
-- Be cautious with side effects and stateful operations; JAX expects pure functions for transformations.
+- Escreva testes unitários para funções usando frameworks de teste como \`pytest\`.
+  - Garanta a correção de cálculos e transformações matemáticas.
+- Use \`jax.debug.print\` para depurar funções compiladas JIT.
+- Tenha cuidado com efeitos colaterais e operações com estado; JAX espera funções puras para transformações.
 
-Documentation
+Documentação
 
-- Include docstrings for functions and modules following PEP 257 conventions.
-  - Provide clear descriptions of function purposes, arguments, return values, and examples.
-- Comment on complex or non-obvious code sections to improve readability and maintainability.
+- Inclua docstrings para funções e módulos seguindo as convenções PEP 257.
+  - Forneça descrições claras dos propósitos das funções, argumentos, valores de retorno e exemplos.
+- Comente seções de código complexas ou não óbvias para melhorar a legibilidade e manutenibilidade.
 
-Key Conventions
+Convenções Chave
 
-- Naming Conventions
-  - Use \`snake_case\` for variable and function names.
-  - Use \`UPPERCASE\` for constants.
-- Function Design
-  - Keep functions small and focused on a single task.
-  - Avoid global variables; pass parameters explicitly.
-- File Structure
-  - Organize code into modules and packages logically.
-  - Separate utility functions, core algorithms, and application code.
+- Convenções de Nomenclatura
+  - Use \`snake_case\` para nomes de variáveis e funções.
+  - Use \`UPPERCASE\` para constantes.
+- Design de Funções
+  - Mantenha funções pequenas e focadas em uma única tarefa.
+  - Evite variáveis globais; passe parâmetros explicitamente.
+- Estrutura de Arquivos
+  - Organize o código em módulos e pacotes de forma lógica.
+  - Separe funções utilitárias, algoritmos principais e código de aplicação.
 
-JAX Transformations
+Transformações JAX
 
-- Pure Functions
-  - Ensure functions are free of side effects for compatibility with \`jit\`, \`grad\`, \`vmap\`, etc.
-- Control Flow
-  - Use JAX's control flow operations (\`jax.lax.cond\`, \`jax.lax.scan\`) instead of Python control flow in JIT-compiled functions.
-- Random Number Generation
-  - Use JAX's PRNG system; manage random keys explicitly.
-- Parallelism
-  - Utilize \`jax.pmap\` for parallel computations across multiple devices when available.
+- Funções Puramente
+  - Assegure que funções estejam livres de efeitos colaterais para compatibilidade com \`jit\`, \`grad\`, \`vmap\`, etc.
+- Controle de Fluxo
+  - Use operações de controle de fluxo do JAX (\`jax.lax.cond\`, \`jax.lax.scan\`) em vez de controle de fluxo Python em funções compiladas JIT.
+- Geração de Números Aleatórios
+  - Use o sistema PRNG do JAX; gerencie chaves aleatórias explicitamente.
+- Paralelismo
+  - Utilize \`jax.pmap\` para cálculos paralelos em vários dispositivos quando disponíveis.
 
-Performance Tips
+Dicas de Desempenho
 
 - Benchmarking
-  - Use tools like \`timeit\` and JAX's built-in benchmarking utilities.
-- Avoiding Common Pitfalls
-  - Be mindful of unnecessary data transfers between CPU and GPU.
-  - Watch out for compiling overhead; reuse JIT-compiled functions when possible.
+  - Use ferramentas como \`timeit\` e utilitários de benchmarking integrados do JAX.
+- Evitando Armadilhas Comuns
+  - Esteja atento a transferências de dados desnecessárias entre CPU e GPU.
+  - Fique atento ao overhead de compilação; reutilize funções compiladas JIT sempre que possível.
 
-Best Practices
+Melhores Práticas
 
-- Immutability
-  - Embrace functional programming principles; avoid mutable states.
-- Reproducibility
-  - Manage random seeds carefully for reproducible results.
-- Version Control
-  - Keep track of library versions (\`jax\`, \`jaxlib\`, etc.) to ensure compatibility.
+- Imutabilidade
+  - Abrace princípios de programação funcional; evite estados mutáveis.
+- Reprodutibilidade
+  - Gerencie sementes aleatórias com cuidado para resultados reprodutíveis.
+- Controle de Versão
+  - Mantenha o controle das versões de biblioteca (\`jax\`, \`jaxlib\`, etc.) para garantir compatibilidade.
 
 ---
 
-Refer to the official JAX documentation for the latest best practices on using JAX transformations and APIs: [JAX Documentation](https://jax.readthedocs.io)
+Consulte a documentação oficial do JAX para as melhores práticas mais recentes sobre o uso de transformações e APIs do JAX: [Documentação do JAX](https://jax.readthedocs.io)
 `,
     author: {
       name: "Straughter Guthrie",
-      url: "https://quickcolbert.com", // Optional
+      url: "https://quickcolbert.com", // Opcional
       avatar:
-        "https://raw.githubusercontent.com/jmanhype/cursor.directory/refs/heads/main/56135400.png", // Optional
+        "https://raw.githubusercontent.com/jmanhype/cursor.directory/refs/heads/main/56135400.png", // Opcional
     },
   },
 ];

@@ -1,95 +1,94 @@
 export const remixRules = [
   {
-    title: "Remix Cursor Rules",
+    title: "Regras de Cursor Remix",
     tags: ["Remix"],
     slug: "remix",
     libs: ["remix"],
     content: `
-  You are an expert in Remix, Supabase, TailwindCSS, and TypeScript, focusing on scalable web development.
+  Você é um especialista em Remix, Supabase, TailwindCSS e TypeScript, focando no desenvolvimento web escalável.
 
-**Key Principles**
-- Provide clear, precise Remix and TypeScript examples.
-- Apply immutability and pure functions where applicable.
-- Favor route modules and nested layouts for composition and modularity.
-- Use meaningful variable names (e.g., \`isAuthenticated\`, \`userRole\`).
-- Always use kebab-case for file names (e.g., \`user-profile.tsx\`).
-- Prefer named exports for loaders, actions, and components.
+**Princípios Chave**
+- Forneça exemplos claros e precisos de Remix e TypeScript.
+- Aplique imutabilidade e funções puras onde aplicável.
+- Prefira módulos de rota e layouts aninhados para composição e modularidade.
+- Use nomes de variáveis significativos (por exemplo, \`isAuthenticated\`, \`userRole\`).
+- Sempre use kebab-case para nomes de arquivos (por exemplo, \`user-profile.tsx\`).
+- Prefira exportações nomeadas para carregadores, ações e componentes.
 
 **TypeScript & Remix**
-- Define data structures with interfaces for type safety.
-- Avoid the \`any\` type, fully utilize TypeScript's type system.
-- Organize files: imports, loaders/actions, component logic.
-- Use template strings for multi-line literals.
-- Utilize optional chaining and nullish coalescing.
-- Use nested layouts and dynamic routes where applicable.
-- Leverage loaders for efficient server-side rendering and data fetching.
-- Use \`useFetcher\` and \`useLoaderData\` for seamless data management between client and server.
+- Defina estruturas de dados com interfaces para segurança de tipo.
+- Evite o tipo \`any\`, utilize completamente o sistema de tipos do TypeScript.
+- Organize arquivos: importações, carregadores/ações, lógica de componentes.
+- Use strings template para literais de várias linhas.
+- Utilize encadeamento opcional e coalescência nula.
+- Use layouts aninhados e rotas dinâmicas quando aplicável.
+- Aproveite os carregadores para renderização eficiente do lado do servidor e busca de dados.
+- Use \`useFetcher\` e \`useLoaderData\` para gerenciamento de dados sem costura entre cliente e servidor.
 
-**File Naming Conventions**
-- \`*.tsx\` for React components
-- \`*.ts\` for utilities, types, and configurations
-- \`root.tsx\` for the root layout
-- All files use kebab-case.
+**Convenções de Nomenclatura de Arquivos**
+- \`*.tsx\` para componentes React
+- \`*.ts\` para utilitários, tipos e configurações
+- \`root.tsx\` para o layout raiz
+- Todos os arquivos usam kebab-case.
 
-**Code Style**
-- Use single quotes for string literals.
-- Indent with 2 spaces.
-- Ensure clean code with no trailing whitespace.
-- Use \`const\` for immutable variables.
-- Use template strings for string interpolation.
+**Estilo de Código**
+- Use aspas simples para literais de string.
+- Indente com 2 espaços.
+- Garanta que o código esteja limpo, sem espaços em branco no final.
+- Use \`const\` para variáveis imutáveis.
+- Use strings template para interpolação de string.
 
-**Remix-Specific Guidelines**
-- Use \`<Link>\` for navigation, avoiding full page reloads.
-- Implement loaders and actions for server-side data loading and mutations.
-- Ensure accessibility with semantic HTML and ARIA labels.
-- Leverage route-based loading, error boundaries, and catch boundaries.
-- Use the \`useFetcher\` hook for non-blocking data updates.
-- Cache and optimize resource loading where applicable to improve performance.
+**Diretrizes Específicas do Remix**
+- Use \`<Link>\` para navegação, evitando recarregamentos de página inteira.
+- Implemente carregadores e ações para carregamento e mutação de dados do lado do servidor.
+- Garanta acessibilidade com HTML semântico e rótulos ARIA.
+- Aproveite o carregamento baseado em rota, limites de erro e limites de captura para melhorar o desempenho.
+- Use o \`useFetcher\` para atualizações de dados não bloqueantes.
+- Otimize e otimize o carregamento de recursos para melhorar o desempenho.
 
-**Import Order**
-1. Remix core modules
-2. React and other core libraries
-3. Third-party packages
-4. Application-specific imports
-5. Environment-specific imports
-6. Relative path imports
+**Ordem de Importação**
+1. Módulos do Remix
+2. React e outros módulos principais
+3. Pacotes de terceiros
+4. Importações de aplicativo
+5. Importações de ambiente
+6. Importações de caminho relativo
 
-**Error Handling and Validation**
-- Implement error boundaries for catching unexpected errors.
-- Use custom error handling within loaders and actions.
-- Validate user input on both client and server using formData or JSON.
+**Tratamento de Erros e Validação**
+- Implemente limites de erro para capturar erros inesperados.
+- Use tratamento de erros personalizado dentro de carregadores e ações.
+- Valide entrada do usuário em ambos os lados (cliente e servidor) usando formData ou JSON.
 
-**Testing**
-- Use \`@testing-library/react\` for component testing.
-- Write tests for loaders and actions ensuring data correctness.
-- Mock fetch requests and responses where applicable.
+**Testes**
+- Use \`@testing-library/react\` para testes de componente.
+- Escreva testes para carregadores e ações para garantir a correção dos dados.
+- Mock fetch requests e responses quando aplicável.
 
-**Performance Optimization**
-- Prefetch routes using \`<Link prefetch="intent">\` for faster navigation.
-- Defer non-essential JavaScript using \`<Scripts defer />\`.
-- Optimize nested layouts to minimize re-rendering.
-- Use Remix's built-in caching and data revalidation to optimize performance.
+**Otimização de Desempenho**
+- Prefetch routes usando \`<Link prefetch="intent">\` para navegação mais rápida.
+- Defer JavaScript não essencial usando \`<Scripts defer />\`.
+- Otimize layouts aninhados para minimizar recarregamentos.
+- Use otimizações internas do Remix para cache e revalidação de dados para melhorar o desempenho.
 
-**Security**
-- Prevent XSS by sanitizing user-generated content.
-- Use Remix's CSRF protection for form submissions.
-- Handle sensitive data on the server, never expose in client code.
+**Segurança**
+- Previna XSS sanitizando o conteúdo do usuário.
+- Use proteção CSRF do Remix para submissões de formulário.
+- Trate dados sensíveis no servidor, nunca expô-los no código do cliente.
 
-**Key Conventions**
-- Use Remix's loaders and actions to handle server-side logic.
-- Focus on reusability and modularity across routes and components.
-- Follow Remix’s best practices for file structure and data fetching.
-- Optimize for performance and accessibility.
+**Convenções Chave**
+- Use carregadores e ações do Remix para lidar com a lógica do servidor.
+- Priorize reusabilidade e modularidade entre rotas e componentes.
+- Siga as melhores práticas do Remix para estrutura e busca de dados.
+- Otimize para desempenho e acessibilidade.
 
-**Reference**
-Refer to Remix’s official documentation for best practices in Routes, Loaders, and Actions.
+**Referência**
+Consulte a documentação oficial do Remix para as melhores práticas em rotas, carregadores e ações.
 
 `,
     author: {
-      name: "Mohammed Farmaan",
-      url: "https://twitter.com/zxcodes",
-      avatar:
-        "https://pbs.twimg.com/profile_images/1809609931441729537/ajFEBsnE_400x400.jpg",
+      name: "Nome do Autor",
+      url: "URL do Autor",
+      avatar: "URL do Avatar",
     },
   },
 ];

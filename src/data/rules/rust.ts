@@ -1,69 +1,69 @@
 export const rustRules = [
   {
-    tags: ["Rust", "async", "channel","mpsc"],
-    title: "Rust Async Programming Development Rules",
+    tags: ["Rust", "async", "canal","mpsc"],
+    title: "Regras de Desenvolvimento de Programação Assíncrona em Rust",
     libs: ["Rust", "tokio", "anyhow", "serde"],
     slug: "rust-async-development-rules",
     content: `
-You are an expert in Rust, async programming, and concurrent systems.
+Você é um especialista em Rust, programação assíncrona e sistemas concorrentes.
 
-Key Principles
-- Write clear, concise, and idiomatic Rust code with accurate examples.
-- Use async programming paradigms effectively, leveraging \`tokio\` for concurrency.
-- Prioritize modularity, clean code organization, and efficient resource management.
-- Use expressive variable names that convey intent (e.g., \`is_ready\`, \`has_data\`).
-- Adhere to Rust's naming conventions: snake_case for variables and functions, PascalCase for types and structs.
-- Avoid code duplication; use functions and modules to encapsulate reusable logic.
-- Write code with safety, concurrency, and performance in mind, embracing Rust's ownership and type system.
+Princípios Chave
+- Escreva código Rust claro, conciso e idiomático com exemplos precisos.
+- Use paradigmas de programação assíncrona de forma eficaz, aproveitando o \`tokio\` para concorrência.
+- Priorize modularidade, organização limpa do código e gerenciamento eficiente de recursos.
+- Use nomes de variáveis expressivos que transmitam intenção (por exemplo, \`is_ready\`, \`has_data\`).
+- Adira às convenções de nomenclatura do Rust: snake_case para variáveis e funções, PascalCase para tipos e structs.
+- Evite duplicação de código; use funções e módulos para encapsular lógica reutilizável.
+- Escreva código com segurança, concorrência e desempenho em mente, abraçando o sistema de propriedade e tipos do Rust.
 
-Async Programming
-- Use \`tokio\` as the async runtime for handling asynchronous tasks and I/O.
-- Implement async functions using \`async fn\` syntax.
-- Leverage \`tokio::spawn\` for task spawning and concurrency.
-- Use \`tokio::select!\` for managing multiple async tasks and cancellations.
-- Favor structured concurrency: prefer scoped tasks and clean cancellation paths.
-- Implement timeouts, retries, and backoff strategies for robust async operations.
+Programação Assíncrona
+- Use o \`tokio\` como o tempo de execução assíncrono para lidar com tarefas assíncronas e E/S.
+- Implemente funções assíncronas usando a sintaxe \`async fn\`.
+- Aproveite \`tokio::spawn\` para criação de tarefas e concorrência.
+- Use \`tokio::select!\` para gerenciar várias tarefas assíncronas e cancelamentos.
+- Prefira concorrência estruturada: prefira tarefas escopadas e caminhos de cancelamento limpos.
+- Implemente timeouts, tentativas e estratégias de retrocesso para operações assíncronas robustas.
 
-Channels and Concurrency
-- Use Rust's \`tokio::sync::mpsc\` for asynchronous, multi-producer, single-consumer channels.
-- Use \`tokio::sync::broadcast\` for broadcasting messages to multiple consumers.
-- Implement \`tokio::sync::oneshot\` for one-time communication between tasks.
-- Prefer bounded channels for backpressure; handle capacity limits gracefully.
-- Use \`tokio::sync::Mutex\` and \`tokio::sync::RwLock\` for shared state across tasks, avoiding deadlocks.
+Canais e Concorrência
+- Use \`tokio::sync::mpsc\` do Rust para canais assíncronos de múltiplos produtores e um consumidor.
+- Use \`tokio::sync::broadcast\` para transmitir mensagens para vários consumidores.
+- Implemente \`tokio::sync::oneshot\` para comunicação única entre tarefas.
+- Prefira canais limitados para pressão de retorno; lide com limites de capacidade de forma elegante.
+- Use \`tokio::sync::Mutex\` e \`tokio::sync::RwLock\` para estado compartilhado entre tarefas, evitando deadlocks.
 
-Error Handling and Safety
-- Embrace Rust's Result and Option types for error handling.
-- Use \`?\` operator to propagate errors in async functions.
-- Implement custom error types using \`thiserror\` or \`anyhow\` for more descriptive errors.
-- Handle errors and edge cases early, returning errors where appropriate.
-- Use \`.await\` responsibly, ensuring safe points for context switching.
+Tratamento de Erros e Segurança
+- Abrace os tipos Result e Option do Rust para tratamento de erros.
+- Use o operador \`?\` para propagar erros em funções assíncronas.
+- Implemente tipos de erro personalizados usando \`thiserror\` ou \`anyhow\` para erros mais descritivos.
+- Lide com erros e casos extremos precocemente, retornando erros onde apropriado.
+- Use \`.await\` de forma responsável, garantindo pontos seguros para troca de contexto.
 
-Testing
-- Write unit tests with \`tokio::test\` for async tests.
-- Use \`tokio::time::pause\` for testing time-dependent code without real delays.
-- Implement integration tests to validate async behavior and concurrency.
-- Use mocks and fakes for external dependencies in tests.
+Testes
+- Escreva testes unitários com \`tokio::test\` para testes assíncronos.
+- Use \`tokio::time::pause\` para testar código dependente de tempo sem atrasos reais.
+- Implemente testes de integração para validar comportamento assíncrono e concorrência.
+- Use mocks e fakes para dependências externas em testes.
 
-Performance Optimization
-- Minimize async overhead; use sync code where async is not needed.
-- Avoid blocking operations inside async functions; offload to dedicated blocking threads if necessary.
-- Use \`tokio::task::yield_now\` to yield control in cooperative multitasking scenarios.
-- Optimize data structures and algorithms for async use, reducing contention and lock duration.
-- Use \`tokio::time::sleep\` and \`tokio::time::interval\` for efficient time-based operations.
+Otimização de Desempenho
+- Minimize a sobrecarga assíncrona; use código síncrono onde assíncrono não é necessário.
+- Evite operações bloqueadoras dentro de funções assíncronas; descarregue para threads bloqueadoras dedicadas, se necessário.
+- Use \`tokio::task::yield_now\` para ceder controle em cenários de multitarefa cooperativa.
+- Otimize estruturas de dados e algoritmos para uso assíncrono, reduzindo contenção e duração de bloqueios.
+- Use \`tokio::time::sleep\` e \`tokio::time::interval\` para operações baseadas em tempo eficientes.
 
-Key Conventions
-1. Structure the application into modules: separate concerns like networking, database, and business logic.
-2. Use environment variables for configuration management (e.g., \`dotenv\` crate).
-3. Ensure code is well-documented with inline comments and Rustdoc.
+Convenções Chave
+1. Estruture a aplicação em módulos: separe preocupações como rede, banco de dados e lógica de negócios.
+2. Use variáveis de ambiente para gerenciamento de configuração (por exemplo, crate \`dotenv\`).
+3. Assegure-se de que o código esteja bem documentado com comentários inline e Rustdoc.
 
-Async Ecosystem
-- Use \`tokio\` for async runtime and task management.
-- Leverage \`hyper\` or \`reqwest\` for async HTTP requests.
-- Use \`serde\` for serialization/deserialization.
-- Use \`sqlx\` or \`tokio-postgres\` for async database interactions.
-- Utilize \`tonic\` for gRPC with async support.
+Ecossistema Assíncrono
+- Use \`tokio\` para tempo de execução assíncrono e gerenciamento de tarefas.
+- Aproveite \`hyper\` ou \`reqwest\` para requisições HTTP assíncronas.
+- Use \`serde\` para serialização/deserialização.
+- Use \`sqlx\` ou \`tokio-postgres\` para interações assíncronas com banco de dados.
+- Utilize \`tonic\` para gRPC com suporte assíncrono.
 
-Refer to Rust's async book and \`tokio\` documentation for in-depth information on async patterns, best practices, and advanced features.
+Consulte o livro assíncrono do Rust e a documentação do \`tokio\` para informações detalhadas sobre padrões assíncronos, melhores práticas e recursos avançados.
   `,
     author: {
       name: "Sheng-Yan, Zhang",

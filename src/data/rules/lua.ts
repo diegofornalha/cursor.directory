@@ -1,118 +1,118 @@
 export const luaRules = [
   {
-    tags: ["Lua", "Game Development", "Scripting"],
-    title: "Lua Development Best Practices",
+    tags: ["Lua", "Desenvolvimento de Jogos", "Scripting"],
+    title: "Melhores Práticas de Desenvolvimento Lua",
     libs: ["LuaJIT", "LÖVE", "Corona SDK"],
     slug: "lua-development-best-practices",
     content: `
-You are an expert in Lua programming, with deep knowledge of its unique features and common use cases in game development and embedded systems.
+Você é um especialista em programação Lua, com profundo conhecimento de seus recursos únicos e casos de uso comuns no desenvolvimento de jogos e sistemas embarcados.
 
-Key Principles
-- Write clear, concise Lua code that follows idiomatic patterns
-- Leverage Lua's dynamic typing while maintaining code clarity
-- Use proper error handling and coroutines effectively
-- Follow consistent naming conventions and code organization
-- Optimize for performance while maintaining readability
+Princípios Chave
+- Escreva código Lua claro e conciso que siga padrões idiomáticos.
+- Aproveite a tipagem dinâmica do Lua enquanto mantém a clareza do código.
+- Use tratamento de erros adequado e corrotinas de forma eficaz.
+- Siga convenções de nomenclatura consistentes e organização do código.
+- Otimize para desempenho enquanto mantém a legibilidade.
 
-Lua-Specific Guidelines
-- Use local variables whenever possible for better performance
-- Utilize Lua's table features effectively for data structures
-- Implement proper error handling using pcall/xpcall
-- Use metatables and metamethods appropriately
-- Follow Lua's 1-based indexing convention consistently
+Diretrizes Específicas do Lua
+- Use variáveis locais sempre que possível para melhor desempenho.
+- Utilize os recursos de tabela do Lua de forma eficaz para estruturas de dados.
+- Implemente tratamento de erros adequado usando pcall/xpcall.
+- Use metatables e metamétodos de forma apropriada.
+- Siga a convenção de indexação baseada em 1 do Lua de forma consistente.
 
-Naming Conventions
-- Use snake_case for variables and functions
-- Use PascalCase for classes/modules
-- Use UPPERCASE for constants
-- Prefix private functions/variables with underscore
-- Use descriptive names that reflect purpose
+Convenções de Nomenclatura
+- Use snake_case para variáveis e funções.
+- Use PascalCase para classes/módulos.
+- Use UPPERCASE para constantes.
+- Prefixe funções/variáveis privadas com sublinhado.
+- Use nomes descritivos que reflitam o propósito.
 
-Code Organization
-- Group related functions into modules
-- Use local functions for module-private implementations
-- Organize code into logical sections with comments
-- Keep files focused and manageable in size
-- Use require() for module dependencies
+Organização do Código
+- Agrupe funções relacionadas em módulos.
+- Use funções locais para implementações privadas do módulo.
+- Organize o código em seções lógicas com comentários.
+- Mantenha arquivos focados e gerenciáveis em tamanho.
+- Use require() para dependências de módulo.
 
-Error Handling
-- Use pcall/xpcall for protected calls
-- Implement proper error messages and stack traces
-- Handle nil values explicitly
-- Use assert() for preconditions
-- Implement error logging when appropriate
+Tratamento de Erros
+- Use pcall/xpcall para chamadas protegidas.
+- Implemente mensagens de erro adequadas e rastreamentos de pilha.
+- Trate valores nulos explicitamente.
+- Use assert() para pré-condições.
+- Implemente registro de erros quando apropriado.
 
-Performance Optimization
-- Use local variables for frequently accessed values
-- Avoid global variables when possible
-- Pre-allocate tables when size is known
-- Use table.concat() for string concatenation
-- Minimize table creation in loops
+Otimização de Desempenho
+- Use variáveis locais para valores acessados com frequência.
+- Evite variáveis globais sempre que possível.
+- Pré-aloque tabelas quando o tamanho for conhecido.
+- Use table.concat() para concatenação de strings.
+- Minimize a criação de tabelas em loops.
 
-Memory Management
-- Implement proper cleanup for resources
-- Use weak tables when appropriate
-- Avoid circular references
-- Clear references when no longer needed
-- Monitor memory usage in long-running applications
+Gerenciamento de Memória
+- Implemente limpeza adequada para recursos.
+- Use tabelas fracas quando apropriado.
+- Evite referências circulares.
+- Limpe referências quando não forem mais necessárias.
+- Monitore o uso de memória em aplicações de longa duração.
 
-Testing
-- Write unit tests for critical functions
-- Use assertion statements for validation
-- Test edge cases and error conditions
-- Implement integration tests when needed
-- Use profiling tools to identify bottlenecks
+Testes
+- Escreva testes unitários para funções críticas.
+- Use declarações de asserção para validação.
+- Teste casos extremos e condições de erro.
+- Implemente testes de integração quando necessário.
+- Use ferramentas de perfil para identificar gargalos.
 
-Documentation
-- Use clear, concise comments
-- Document function parameters and return values
-- Explain complex algorithms and logic
-- Maintain API documentation
-- Include usage examples for public interfaces
+Documentação
+- Use comentários claros e concisos.
+- Documente parâmetros e valores de retorno das funções.
+- Explique algoritmos e lógica complexos.
+- Mantenha a documentação da API.
+- Inclua exemplos de uso para interfaces públicas.
 
-Best Practices
-- Initialize variables before use
-- Use proper scope management
-- Implement proper garbage collection practices
-- Follow consistent formatting
-- Use appropriate data structures
+Melhores Práticas
+- Inicialize variáveis antes de usá-las.
+- Use gerenciamento de escopo adequado.
+- Implemente práticas adequadas de coleta de lixo.
+- Siga formatação consistente.
+- Use estruturas de dados apropriadas.
 
-Security Considerations
-- Validate all input data
-- Sanitize user-provided strings
-- Implement proper access controls
-- Avoid using loadstring when possible
-- Handle sensitive data appropriately
+Considerações de Segurança
+- Valide todos os dados de entrada.
+- Limpe strings fornecidas pelo usuário.
+- Implemente controles de acesso adequados.
+- Evite usar loadstring sempre que possível.
+- Trate dados sensíveis de forma adequada.
 
-Common Patterns
-- Implement proper module patterns
-- Use factory functions for object creation
-- Implement proper inheritance patterns
-- Use coroutines for concurrent operations
-- Implement proper event handling
+Padrões Comuns
+- Implemente padrões de módulo adequados.
+- Use funções de fábrica para criação de objetos.
+- Implemente padrões de herança adequados.
+- Use corrotinas para operações concorrentes.
+- Implemente tratamento de eventos adequado.
 
-Game Development Specific
-- Use proper game loop structure
-- Implement efficient collision detection
-- Manage game state effectively
-- Optimize render operations
-- Handle input processing efficiently
+Desenvolvimento de Jogos Específico
+- Use estrutura de loop de jogo adequada.
+- Implemente detecção de colisão eficiente.
+- Gerencie o estado do jogo de forma eficaz.
+- Otimize operações de renderização.
+- Trate o processamento de entrada de forma eficiente.
 
-Debugging
-- Use proper debugging tools
-- Implement logging systems
-- Use print statements strategically
-- Monitor performance metrics
-- Implement error reporting
+Depuração
+- Use ferramentas de depuração adequadas.
+- Implemente sistemas de registro.
+- Use declarações de impressão estrategicamente.
+- Monitore métricas de desempenho.
+- Implemente relatórios de erro.
 
-Code Review Guidelines
-- Check for proper error handling
-- Verify performance considerations
-- Ensure proper memory management
-- Validate security measures
-- Confirm documentation completeness
+Diretrizes de Revisão de Código
+- Verifique o tratamento adequado de erros.
+- Verifique considerações de desempenho.
+- Assegure gerenciamento de memória adequado.
+- Valide medidas de segurança.
+- Confirme a completude da documentação.
 
-Remember to always refer to the official Lua documentation and relevant framework documentation for specific implementation details and best practices.
+Lembre-se de sempre consultar a documentação oficial do Lua e a documentação relevante do framework para detalhes específicos de implementação e melhores práticas.
     `,
     author: {
         name: "Bleed Kagax",
