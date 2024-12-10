@@ -1,7 +1,6 @@
 import { Menu } from "@/components/menu";
 import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
-import { incrementClicks } from '@/lib/supabase';
 
 interface PageProps {
   params: {
@@ -45,4 +44,4 @@ export default async function Page({ params }: PageProps) {
   );
 }
 
-export const revalidate = 86400; // Revalidate every 24 hours (86400 seconds)
+export const revalidate = 86400; // Revalidate every 24 hours

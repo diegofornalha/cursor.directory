@@ -10,7 +10,6 @@ import { cn, generateNameAbbr, isImageUrl } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
-import { ShareButton } from "./share-button";
 
 export type Rule = {
   libs?: string[];
@@ -24,7 +23,7 @@ export type Rule = {
   };
 };
 
-export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
+export function RuleCard({ rule, isPage = false }: { rule: Rule; isPage?: boolean }) {
   return (
     <Card className="bg-background p-4 max-h-[calc(100vh-8rem)] aspect-square flex flex-col">
       <CardContent
@@ -34,8 +33,23 @@ export function RuleCard({ rule, isPage }: { rule: Rule; isPage?: boolean }) {
         )}
       >
         <div className="group-hover:flex hidden right-4 bottom-4 absolute z-10 space-x-2">
-          <ShareButton slug={rule.slug} />
-          <CopyButton content={rule.content} slug={rule.slug} />
+          <div className="flex gap-2">
+            <CopyButton 
+              content={rule.content} 
+              slug={rule.slug} 
+              type="content" 
+            />
+            <CopyButton 
+              content={typeof window !== 'undefined' ? window.location.href : ''} 
+              slug={rule.slug} 
+              type="url" 
+            />
+            <CopyButton 
+              content={`${process.env.NEXT_PUBLIC_APP_URL || window?.location?.origin || ''}/${rule.slug}`} 
+              slug={rule.slug} 
+              type="whatsapp" 
+            />
+          </div>
         </div>
 
         <Link href={`/${rule.slug}`}>

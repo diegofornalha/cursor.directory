@@ -7,10 +7,17 @@ import { getRuleBySlug } from "@/data";
 export default async function PopularPage() {
   const popularItems = await getPopularItems();
   const popularRules = (await Promise.all(
-    popularItems.map(async (item) => {
-      const rule = await getRuleBySlug(item.slug);
-      return rule;
-    })
+    popularItems
+      .sort((a, b) => {
+        // Soma total de interações para cada item
+        const totalA = (a.click_content || 0) + (a.click_url || 0) + (a.click_whatsapp || 0);
+        const totalB = (b.click_content || 0) + (b.click_url || 0) + (b.click_whatsapp || 0);
+        return totalB - totalA; // Ordena do maior para o menor
+      })
+      .map(async (item) => {
+        const rule = await getRuleBySlug(item.slug);
+        return rule;
+      })
   )).filter((rule): rule is Rule => rule !== null);
 
   return (

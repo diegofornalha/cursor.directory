@@ -11,4 +11,11 @@ export interface PopularItem {
   author_avatar: string;
   created_at: string;
   updated_at: string;
+}
+
+export interface ClickCount {
+  slug: string;
+  click_content: number;
+  click_url: number;
+  click_whatsapp: number;
 } 
