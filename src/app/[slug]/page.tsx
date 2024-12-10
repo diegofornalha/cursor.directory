@@ -6,10 +6,11 @@ interface PageProps {
   params: {
     slug: string;
   };
+  searchParams?: { [key: string]: string | string[] | undefined };
 }
 
 export async function generateMetadata({ params }: PageProps) {
-  const slug = await Promise.resolve(params.slug);
+  const slug = params.slug;
   const rule = await getRuleBySlug(slug);
 
   return {
@@ -24,7 +25,7 @@ export async function generateStaticParams() {
 }
 
 export default async function Page({ params }: PageProps) {
-  const slug = await Promise.resolve(params.slug);
+  const slug = params.slug;
   const rule = await getRuleBySlug(slug);
 
   if (!rule) {
