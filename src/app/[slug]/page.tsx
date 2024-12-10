@@ -3,13 +3,12 @@ import { RuleCard } from "@/components/rule-card";
 import { getRuleBySlug, rules } from "@/data";
 import { Metadata } from 'next';
 
-// Atualize a interface para usar os tipos corretos do Next.js
-type Props = {
-  params: { slug: string }
-  searchParams: { [key: string]: string | string[] | undefined }
-}
-
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+// Usar os tipos corretos do Next.js
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string };
+}): Promise<Metadata> {
   const rule = await getRuleBySlug(params.slug);
 
   return {
@@ -23,7 +22,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default async function Page({ params }: Props) {
+// Usar a tipagem inline para o componente da página
+export default async function Page({
+  params,
+}: {
+  params: { slug: string };
+}) {
   const rule = await getRuleBySlug(params.slug);
 
   if (!rule) {
