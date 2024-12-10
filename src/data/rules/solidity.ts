@@ -81,7 +81,7 @@ export const solidityRules = [
 
     Testes e Implantação
     - Desenvolva testes unitários e de integração abrangentes para todos os contratos inteligentes, cobrindo casos extremos e vetores de ataque potenciais.
-    - Use o framework de testes do Anchor para simular ambientes on-chain e validar o comportamento de seus programas.
+    - Use o Hardhat para simular ambientes on-chain e validar o comportamento de seus programas.
     - Realize testes de ponta a ponta em um ambiente de testnet antes de implantar seus contratos na mainnet.
     - Implemente pipelines de integração e implantação contínuas para automatizar o teste e a implantação de seus programas Solana.
 
