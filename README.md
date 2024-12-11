@@ -1,115 +1,92 @@
 ![hero](image.png)
 
-## Recognition
+## Reconhecimento
 
 <a href="https://news.ycombinator.com/item?id=41346156">
   <img
     style="width: 250px; height: 54px;" width="250" height="54"
-    alt="Featured on Hacker News"
+    alt="Destaque no Hacker News"
     src="https://hackernews-badge.vercel.app/api?id=41346156"
   />
 </a>
 
-# How to Contribute to Cursor AI
+# Como Contribuir para o Cursor AI
 
-### This guide will help you understand how to add new rules or prompts to the Cursor AI directory.
+### Este guia irá ajudá-lo a entender como adicionar novas regras ou prompts ao diretório do Cursor AI.
 
-#### 1. Fork the Repo
+#### 1. Faça um Fork do Repositório
 
-#### 2. Adding a New Rule
+#### 2. Adicionando uma Nova Regra
 
-If you want to submit a **new rule** that does not already exist in the Cursor directory, follow these steps:
+Se você deseja enviar uma **nova regra** que ainda não existe no diretório do Cursor, siga estes passos:
 
-1. **Locate the Rule Index**:  
+1. **Localize o Índice de Regras**:  
 
-   Add your new rule in the `src/data/index.ts` file. For example:
+   Adicione sua nova regra no arquivo `src/data/index.ts`. Por exemplo:
    
    ```typescript
    import { cRules } from "./rules/c";
 
-2. **Create a Rule File**:
+2. **Crie um Arquivo de Regra**:
     
-    Create a new file in the `src/data/rules/` directory with the appropriate name. For example, if you're adding a rule for Next.js, name the file `nextjs.ts`.
+    Crie um novo arquivo no diretório `src/data/rules/` com o nome apropriado. Por exemplo, se você está adicionando uma regra para Next.js, nomeie o arquivo como `nextjs.ts`.
 
-3. **Define the Rule**:
+3. **Defina a Regra**:
    
-    Add your prompts inside the newly created file. Refer to the existing rules for formatting guidance.  Make sure your prompts are accurate, clear, and helpful to developers.
+    Adicione seus prompts dentro do arquivo recém-criado. Consulte as regras existentes para orientações de formatação. Certifique-se de que seus prompts sejam precisos, claros e úteis para os desenvolvedores.
 
-    Your prompts should:
-      - Be accurate and related to the rule.
-      - Be clearly worded to help developers understand and use them easily.
-      - Be actionable, providing steps or insights to solve common problems or optimize workflows.
-      - Test your prompts: Before submitting, ensure that your prompts have been tested and work as expected in the relevant development environment. This ensures that other developers can rely your contributions :) .
+    Seus prompts devem:
+      - Ser precisos e relacionados à regra.
+      - Ser redigidos de forma clara para ajudar os desenvolvedores a entender e usá-los facilmente.
+      - Ser acionáveis, fornecendo etapas ou insights para resolver problemas comuns ou otimizar fluxos de trabalho.
+      - Teste seus prompts: Antes de enviar, certifique-se de que seus prompts foram testados e funcionam como esperado no ambiente de desenvolvimento relevante. Isso garante que outros desenvolvedores possam confiar em suas contribuições :) .
 
-#### 3. Adding New Prompts/Content to Existing Rules
+#### 3. Adicionando Novos Prompts/Conteúdo a Regras Existentes
 
-If you want to add new prompts to an existing rule, follow these steps:
+Se você deseja adicionar novos prompts a uma regra existente, siga estes passos:
 
-1. **Find the Existing Rule**:
+1. **Encontre a Regra Existente**:
 
-    Navigate to the `src/data/rules/` directory and open the relevant file for the rule you want to update. For example, if you're adding prompts for **Next.js**, open `nextjs.ts`.
+    Navegue até o diretório `src/data/rules/` e abra o arquivo relevante para a regra que você deseja atualizar. Por exemplo, se você está adicionando prompts para **Next.js**, abra `nextjs.ts`.
 
-2. **Add Your New Prompts**:
+2. **Adicione Seus Novos Prompts**:
 
-    Add your new prompts below the existing ones. Ensure that your additions are tested.
+    Adicione seus novos prompts abaixo dos existentes. Certifique-se de que suas adições sejam testadas.
 
-#### 4. Important Parameters in Rule Files
+#### 4. Parâmetros Importantes em Arquivos de Regras
 
-  When creating or updating rules, be sure to include the following parameters for consistency and clarity:
+  Ao criar ou atualizar regras, certifique-se de incluir os seguintes parâmetros para consistência e clareza:
 
-  1. **tags**: Add language-specific tags to categorize the rule.
+  1. **tags**: Adicione tags específicas de linguagem para categorizar a regra.
 
       ```
       tags: ["JavaScript", "Next.js"]
 
-  2. **title**: Provide an appropriate title that describes the rule.
+  2. **title**: Forneça um título apropriado que descreva a regra.
 
       ```
-        title: "Next.js Best Practices"
+        title: "Melhores Práticas do Next.js"
 
-  3. **slug**: Create a unique slug that reflects the purpose of the rule.
-
-      ```
-        slug: "nextjs-best-practices"
-
-  4. **content**: Write the content of your prompt here. Make sure it is clear, actionable, and helpful to developers. Be concise, but provide enough detail to assist cursor ai in completing tasks effectively...
+  3. **slug**: Crie um slug único que reflita o propósito da regra.
 
       ```
-        content: `your amazing prompt`
+        slug: "melhores-praticas-nextjs"
 
-  5. **author**: Include details about yourself as the contributor. This helps others recognize your contributions and allows them to reach out if needed.
+  4. **content**: Escreva o conteúdo do seu prompt aqui. Certifique-se de que seja claro, acionável e útil para os desenvolvedores. Seja conciso, mas forneça detalhes suficientes para ajudar o cursor ai a completar tarefas de forma eficaz...
+
+      ```
+        content: `seu prompt incrível`
+
+  5. **author**: Inclua detalhes sobre você como contribuinte. Isso ajuda outros a reconhecer suas contribuições e permite que eles entrem em contato, se necessário.
 
   
-     - **name**: Your full name or GitHub username.
-     - **URL**: A link to your GitHub, Twitter, website, or any other profile you want to share. This is optional but recommended.
-     - **avatar**: The URL path to an image or avatar that represents you. You can use a photo from a service like Gravatar or any image hosting service.
+     - **name**: Seu nome completo ou nome de usuário do GitHub.
+     - **URL**: Um link para seu GitHub, Twitter, site ou qualquer outro perfil que você queira compartilhar. Isso é opcional, mas recomendado.
+     - **avatar**: O caminho da URL para uma imagem ou avatar que o represente. Você pode usar uma foto de um serviço como Gravatar ou qualquer serviço de hospedagem de imagens.
 
-### 5. Create a PR
-
-
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm install
-
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-### 6. How to Use Cursor Rules in Your Project.
-
-  - First, create a `.cursorrules` file in the root directory of your project.
-  - Navigate to the Cursor directory and copy the relevant rules.
-  - Paste these rules into the `.cursorrules` file.
-  - When using the Cursor AI editor (in the chat box or composer), inform the AI to "follow the cursor rules" to ensure the prompts align with the rules youdefined in the `.cursorrules` file. The AI will generate output that adheres to the guidelines set in your custom rules.
+### 5. Crie um PR
 
 
+## Começando
+
+Primeiro, execute o servidor de desenvolvimento:
