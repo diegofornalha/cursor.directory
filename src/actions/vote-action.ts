@@ -41,19 +41,14 @@ export const voteAction = actionClient
       // Incrementar ou criar contagem
       const { error: countError } = await supabase
         .from('rule_counts')
-        .upsert(
-          { 
-            slug,
-            count: 1,
-            views: 0
-          },
-          {
-            onConflict: 'slug',
-            update: {
-              count: supabase.raw('rule_counts.count + 1')
-            }
-          }
-        );
+        .upsert({
+          slug,
+          count: 1,
+          views: 0
+        }, {
+          onConflict: 'slug',
+          count: 'exact'
+        });
 
       if (countError) throw countError;
 
