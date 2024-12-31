@@ -7,18 +7,27 @@ import { Separator } from "@/components/ui/separator";
 import { getSections } from "@/data";
 import { PlusIcon } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
-
-const allSections = getSections();
+import { useEffect, useState } from "react";
+import type { Section } from "@/data";
 
 export function Menu() {
   const router = useRouter();
-  const [sections, setSections] = useState(allSections);
+  const [sections, setSections] = useState<Section[]>([]);
+  const [allSections, setAllSections] = useState<Section[]>([]);
 
-  const handleClick = (tag: string) => {
+  useEffect(() => {
+    const loadSections = async () => {
+      const data = await getSections();
+      setSections(data);
+      setAllSections(data);
+    };
+    loadSections();
+  }, []);
+
+  const handleClick = (title: string) => {
     router.push("/", { scroll: false });
 
-    const element = document.getElementById(tag);
+    const element = document.getElementById(title);
     if (!element) return;
 
     window.scrollTo({
@@ -26,58 +35,45 @@ export function Menu() {
       behavior: "smooth",
     });
 
-    // Run the handleClick function first
     clearSearch();
   };
 
   const clearSearch = () => {
-    // Clear the search input
     setSections(allSections);
   };
 
   return (
     <aside className="w-64 p-4 flex flex-col">
-      {/* Search input */}
       <SearchInput
         onSearch={(term) =>
           setSections(
             allSections.filter((section) =>
-              section.tag.toLowerCase().includes(term),
+              section.title.toLowerCase().includes(term.toLowerCase()),
             ),
           )
         }
         clearSearch={clearSearch}
       />
-      <ScrollArea className="flex-grow">
-        <div className="space-y-1">
+
+      <Separator className="my-4" />
+
+      <ScrollArea className="flex-1">
+        <div className="space-y-2">
           {sections.map((section) => (
             <Button
-              onClick={() => handleClick(section.tag)}
-              key={section.tag}
+              key={section.title}
               variant="ghost"
-              className="w-full justify-start"
+              className="w-full justify-start font-normal"
+              onClick={() => handleClick(section.title)}
             >
-              {section.tag}
-              <span className="ml-auto text-[#878787]">
-                {section.rules.length}
+              {section.title}
+              <span className="ml-auto text-muted-foreground">
+                {section.items.length}
               </span>
             </Button>
           ))}
         </div>
       </ScrollArea>
-      <Separator className="my-4" />
-      <a
-        href="https://github.com/diegofornalha/cursor.directory"
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Button
-          className="w-full bg-[#F5F5F3]/30 text-black border border-black rounded-full items-center justify-center gap-2 font-medium hidden md:flex dark:text-white dark:border-white"
-          variant="outline"
-        >
-          <span>Submit</span> <PlusIcon className="w-4 h-4" />
-        </Button>
-      </a>
     </aside>
   );
 }

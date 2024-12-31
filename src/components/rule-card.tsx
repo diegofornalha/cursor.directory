@@ -1,29 +1,20 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { cn, generateNameAbbr, isImageUrl } from "@/lib/utils";
+import { cn, generateNameAbbr } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
-
-export type Rule = {
-  libs?: string[];
-  content: string;
-  title?: string;
-  slug: string;
-  author: {
-    name: string;
-    url: string;
-    avatar: string;
-  };
-};
+import type { Rule } from "@/data";
+import { useEffect, useState } from "react";
 
 export function RuleCard({ rule, isPage = false }: { rule: Rule; isPage?: boolean }) {
+  const [origin, setOrigin] = useState('');
+
+  useEffect(() => {
+    setOrigin(window?.location?.origin || '');
+  }, []);
+
   return (
     <Card className="bg-background p-4 max-h-[calc(100vh-8rem)] aspect-square flex flex-col">
       <CardContent
@@ -40,70 +31,66 @@ export function RuleCard({ rule, isPage = false }: { rule: Rule; isPage?: boolea
               type="content" 
             />
             <CopyButton 
-              content={typeof window !== 'undefined' ? window.location.href : ''} 
+              content={origin} 
               slug={rule.slug} 
               type="url" 
             />
             <CopyButton 
-              content={`${process.env.NEXT_PUBLIC_APP_URL || window?.location?.origin || ''}/${rule.slug}`} 
+              content={`${process.env.NEXT_PUBLIC_APP_URL || origin}/${rule.slug}`} 
               slug={rule.slug} 
               type="whatsapp" 
             />
           </div>
         </div>
 
-        <Link href={`/${rule.slug}`}>
-          <ScrollArea className="h-full">
-            <code className="text-sm block pr-3">{rule.content}</code>
-          </ScrollArea>
-        </Link>
-      </CardContent>
+        <ScrollArea className="h-full pr-3">
+          <div className="space-y-4">
+            {rule.title && (
+              <CardHeader className="p-0">
+                <CardTitle className="text-base font-medium">{rule.title}</CardTitle>
+              </CardHeader>
+            )}
 
-      <CardHeader className="p-0 space-y-1">
-        <div className="flex items-center justify-between">
-          <CardTitle className="text-sm">{rule.author.name}</CardTitle>
-          <a href={rule.author.url} target="_blank" rel="noopener noreferrer">
-            <Avatar className="size-6">
-              {isImageUrl(rule.author.avatar) ? (
-                <AvatarImage src={rule.author.avatar} alt={rule.author.name} />
-              ) : (
-                <AvatarFallback>
-                  {generateNameAbbr(rule.author.name)}
-                </AvatarFallback>
-              )}
-            </Avatar>
-          </a>
-        </div>
-        {rule.libs && rule.libs.length > 0 && (
-          <Popover>
-            <PopoverTrigger className="flex gap-2 items-center overflow-x-auto whitespace-nowrap h-5 cursor-pointer hover:bg-accent">
-              {rule.libs.slice(0, 2).map((lib) => (
-                <span
-                  key={lib}
-                  className="text-xs text-[#878787] font-mono flex-shrink-0"
-                >
-                  {lib}
-                </span>
-              ))}
-              {rule.libs.length > 2 && (
-                <span className="text-xs text-[#878787] font-mono flex gap-1 items-center">
-                  <span>+{rule.libs.length - 2} more</span>
-                  <ChevronDown className="w-3 h-3" />
-                </span>
-              )}
-            </PopoverTrigger>
-            <PopoverContent>
-              {rule.libs.map((lib) => (
-                <div key={lib} className="flex flex-col justify-center gap-2">
-                  <span className="text-xs text-[#878787] font-mono flex-shrink-0">
+            {rule.libs && rule.libs.length > 0 && (
+              <div className="flex flex-wrap gap-2">
+                {rule.libs.map((lib) => (
+                  <span
+                    key={lib}
+                    className="bg-muted px-2 py-1 rounded-md text-xs text-muted-foreground"
+                  >
                     {lib}
                   </span>
-                </div>
-              ))}
-            </PopoverContent>
-          </Popover>
+                ))}
+              </div>
+            )}
+
+            <pre className="whitespace-pre-wrap break-words font-mono text-xs">
+              {rule.content}
+            </pre>
+          </div>
+        </ScrollArea>
+      </CardContent>
+
+      <div className="flex items-center justify-between">
+        <Link
+          href={rule.author.url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-2"
+        >
+          <Avatar className="h-6 w-6">
+            <AvatarImage src={rule.author.avatar} alt={rule.author.name} />
+            <AvatarFallback>{generateNameAbbr(rule.author.name)}</AvatarFallback>
+          </Avatar>
+          <span className="text-sm text-muted-foreground">{rule.author.name}</span>
+        </Link>
+
+        {!isPage && (
+          <Link href={`/${rule.slug}`}>
+            <ChevronDown className="h-4 w-4 text-muted-foreground" />
+          </Link>
         )}
-      </CardHeader>
+      </div>
     </Card>
   );
 }

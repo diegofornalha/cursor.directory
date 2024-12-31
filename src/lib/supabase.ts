@@ -1,13 +1,50 @@
 import { createClient } from '@supabase/supabase-js';
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL;
-const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabaseKey = process.env.SUPABASE_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase environment variables');
+interface PopularItem {
+  slug: string;
+  total_clicks: number;
 }
 
-export const supabase = createClient(supabaseUrl, supabaseKey);
+// Mock do cliente Supabase quando as credenciais não estão disponíveis
+const mockStorage: { [key: string]: number } = {};
+
+// Criar cliente Supabase real ou mock dependendo das credenciais
+export const supabase = supabaseUrl && supabaseKey 
+  ? createClient(supabaseUrl, supabaseKey)
+  : {
+      rpc: async (functionName: string, params: any) => {
+        const { item_slug } = params;
+        if (!mockStorage[item_slug]) {
+          mockStorage[item_slug] = 0;
+        }
+        mockStorage[item_slug]++;
+        return { data: mockStorage[item_slug], error: null };
+      },
+      from: (table: string) => ({
+        select: () => ({
+          data: Object.entries(mockStorage).map(([slug, clicks]) => ({ 
+            slug, 
+            total_clicks: clicks 
+          })),
+          order: () => ({
+            limit: (n: number) => ({
+              data: Object.entries(mockStorage)
+                .map(([slug, clicks]) => ({ slug, total_clicks: clicks }))
+                .sort((a, b) => b.total_clicks - a.total_clicks)
+                .slice(0, n),
+              error: null
+            })
+          })
+        })
+      })
+    };
+
+if (!supabaseUrl || !supabaseKey) {
+  console.warn('Supabase credentials not found, using mock data');
+}
 
 export async function incrementUrlClicks(slug: string) {
   try {
@@ -19,9 +56,9 @@ export async function incrementUrlClicks(slug: string) {
 
 export async function incrementCopyClicks(slug: string) {
   try {
-    await supabase.rpc('increment_content_clicks', { item_slug: slug });
+    await supabase.rpc('increment_copy_clicks', { item_slug: slug });
   } catch (error) {
-    console.error('Error incrementing content clicks:', error);
+    console.error('Error incrementing copy clicks:', error);
   }
 }
 
@@ -33,14 +70,12 @@ export async function incrementWhatsappClicks(slug: string) {
   }
 }
 
-export async function getPopularItems(limit = 10) {
+export async function getPopularItems(limit = 10): Promise<PopularItem[]> {
   try {
     const { data, error } = await supabase
-      .from('rule_counts')
-      .select('slug, click_content, click_url, click_whatsapp')
-      .order('click_content', { ascending: false })
-      .order('click_url', { ascending: false })
-      .order('click_whatsapp', { ascending: false })
+      .from('popular_items')
+      .select()
+      .order('total_clicks', { ascending: false })
       .limit(limit);
 
     if (error) throw error;
